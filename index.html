@@ -98,7 +98,33 @@ th.trimh[data-pts="hybrid gas"]{box-shadow:none;background:linear-gradient(90deg
 .key{display:flex;gap:16px;flex-wrap:wrap;align-items:center;padding:12px 0 0;font-size:13px;color:var(--muted)}
 .key i{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:6px}
 .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:1px}
-@media print{body{background:#fff;color:#000}.card,.tablewrap{background:#fff;border-color:#bbb}.trim.dimmed{opacity:1}th{background:#eee;color:#000}td.S{color:#0a7a3a}td.O{color:#9a6b00}td.N{color:#999}.filter,nav.jump,.cta{display:none}header,footer{background:#fff;color:#000}header p,footer p{color:#333}.stat div,.note{background:#f3f3f3;color:#000}}
+
+/* inventory */
+.inv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:900px){.inv-grid{grid-template-columns:1fr}}
+.unit{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;position:relative;overflow:hidden}
+.unit.avail{border-color:rgba(46,204,113,.55);background:linear-gradient(90deg,rgba(46,204,113,.10),var(--panel) 45%)}
+.unit.sold{border-color:rgba(235,10,30,.45);background:linear-gradient(90deg,rgba(235,10,30,.10),var(--panel) 45%)}
+.unit:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--line)}
+.unit.avail:before{background:var(--green)}.unit.sold:before{background:var(--red)}
+.unit .ptchip{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--pc);color:var(--pc);margin-bottom:6px}
+.unit h3{margin:0 0 2px;font-size:17px;padding-right:110px}
+.unit .price{font-size:22px;font-weight:bold;margin:6px 0 2px}
+.unit .price small{font-size:12px;color:var(--muted);font-weight:normal;margin-left:6px}
+.unit .line{font-size:13px;color:#ddd;margin:2px 0}
+.unit .line b{color:var(--muted);font-weight:normal;margin-right:4px}
+.unit .stat-lbl{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.badge-av,.badge-sold{position:absolute;top:14px;right:14px;font-size:11px;font-weight:bold;letter-spacing:1.5px;padding:5px 11px;border-radius:999px}
+.badge-av{background:#0f3d24;color:#7dffb0;border:1px solid var(--green);box-shadow:0 0 10px rgba(46,204,113,.55);animation:glow 1.8s ease-in-out infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 6px rgba(46,204,113,.35)}50%{box-shadow:0 0 16px rgba(46,204,113,.9)}}
+.badge-sold{background:#3a0a10;color:#ff8a94;border:1px solid var(--red)}
+.unit.sold{opacity:.6}
+.unit.sold h3{padding-right:80px}
+.reserve{display:inline-block;margin-top:10px;background:var(--red);color:#fff;text-decoration:none;font-weight:bold;font-size:13px;padding:9px 14px;border-radius:8px}
+.inv-sub{font-size:16px;margin:26px 0 10px;color:#fff}
+.inv-sub span{color:var(--muted);font-weight:normal;font-size:13px;margin-left:8px}
+@media(prefers-reduced-motion:reduce){.badge-av{animation:none}}
+@media print{.badge-av{animation:none;box-shadow:none}.unit.sold{opacity:.7}.reserve{display:none}body{background:#fff;color:#000}.card,.tablewrap{background:#fff;border-color:#bbb}.trim.dimmed{opacity:1}th{background:#eee;color:#000}td.S{color:#0a7a3a}td.O{color:#9a6b00}td.N{color:#999}.filter,nav.jump,.cta{display:none}header,footer{background:#fff;color:#000}header p,footer p{color:#333}.stat div,.note{background:#f3f3f3;color:#000}}
 </style>
 </head>
 <body>
@@ -123,6 +149,7 @@ th.trimh[data-pts="hybrid gas"]{box-shadow:none;background:linear-gradient(90deg
   <a href="#colors">Colors</a>
   <a href="#options">Factory options</a>
   <a href="#specs">Specs</a>
+  <a href="#inventory">Inventory</a>
   <a href="#disclaimers">Disclaimers</a>
 </nav>
 
@@ -282,6 +309,15 @@ th.trimh[data-pts="hybrid gas"]{box-shadow:none;background:linear-gradient(90deg
 <section id="specs">
   <h2>Specifications</h2>
   <div class="tablewrap"><table id="specs-t" style="min-width:1000px"></table></div>
+</section>
+
+
+<!-- INVENTORY -->
+<section id="inventory">
+  <h2>Current 2026 Grand Highlander inventory</h2>
+  <p class="lead">Every 2026 Grand Highlander on our books right now — in stock, in transit, or scheduled for production. Green cards marked <b style="color:#7dffb0">Available</b> are open. Red cards marked <b style="color:#ff8a94">Sold</b> are already spoken for, but they show what's been moving so you can spec-match against the next allocation.</p>
+  <div id="invroot"></div>
+  <div class="note"><b>Snapshot in time.</b> Inventory is accurate as of September 10, 2026 and changes daily. Unit prices are MSRP as built (Total SRP); trim information above is unpriced. A unit is not held until Josh confirms it is still open and a deposit is placed. Scheduled-for-production units carry a temporary VIN until built.</div>
 </section>
 
 <!-- DISCLAIMERS -->
@@ -497,6 +533,77 @@ function renderSpecs(){
   document.getElementById('specs-t').innerHTML=SPECS.map((r,i)=>i===0?'<tr>'+r.map(x=>{const [n,p]=x.split('|');return p?`<th class="sh" data-pts="${p}">${n}</th>`:`<th>${n}</th>`}).join('')+'</tr>':'<tr>'+r.map((x,j)=>j===0?`<td class="feat">${x}</td>`:`<td class="txt" ${x==='Same'?'style="color:var(--dim)"':''}>${x}</td>`).join('')+'</tr>').join('');
 }
 renderTrims();renderMatrix();renderColors();renderSpecs();
+// ---------- INVENTORY (export 9/10/26) ----------
+const SHEET_LIVE = true;
+const EXT={"01J9":["Celestial Silver Metallic","#b8bcc2"],"0218":["Midnight Black Metallic","#0d0d0f"],"0089":["Wind Chill Pearl","#f1f2f0"],"03T3":["Ruby Flare Pearl","#8e1220"],"01L5":["Heavy Metal","#4a4d52"],"08X8":["Blueprint","#1f3c6e"],"01H5":["Cement","#9c9a94"],"01L6":["Storm Cloud","#6d7378"]};
+const INT={EA20:"Black SofTex®",EA10:"Light Gray SofTex®",LC20:"Black Leather",LC10:"Light Gray Leather",LD20:"Black Leather",LB10:"Light Gray Leather",LB20:"Black Leather",LB40:"Portobello Leather",LA20:"Black Leather and Ultrasuede®",LA10:"Light Gray Leather and Ultrasuede®",LA40:"Portobello Leather and Ultrasuede®"};
+const OPT={SR:"Panoramic Moonroof",SB:"Panoramic View Monitor",BS:"8-passenger Bench Seat",PC:"Premium Paint",DH:"Tow Hitch Receiver Package",'2T':"All-Weather Floor Liner Package",G4:"Illuminated Door Sills",J6:"Illuminated Cargo Sills",MF:"Mudguards",PL:"Logo Side Puddle Lamp",D5:"Door Edge Guards",'43':"Rear Hatch Cargo Lamps",'87':"Toyota Multimedia Screen Protector",WL:"Alloy Wheel Locks",FE:null};
+const CAT={G:"In stock",FI:"In transit",A:"Scheduled for production"};
+const TRIMPT={"Hybrid XLE":"hybrid","Hybrid Limited":"hybrid","Hybrid Nightshade":"hybrid","Hybrid MAX Platinum":"max","Hybrid MAX Limited":"max","XLE":"gas","Limited":"gas","Platinum":"gas"};
+// [cat, trim, model, ext, int, vin, codes, msrp, reserved]
+const INV=[
+["G","Hybrid XLE","6716S","01J9","EA20","5TDABAA53TS007248","FE BS 2T MF",48923,"Y"],
+["G","Hybrid MAX Platinum","6732S","0218","LA20","5TDADAB52TS054537","FE 2T 87 DH MF",63353,"Y"],
+["G","Hybrid Nightshade","6733S","0089","LD20","5TDACAB5XTS125471","FE BK PC SB SR 1S 1Y 2T 3P 43 59 BM D5 G4 GN MF RB WL",62001,"Y"],
+["G","Hybrid Nightshade","6733S","0218","LD20","5TDACAB51TS126024","FE BK 2T 43 DH G4 J6 MF PL",58428,"Y"],
+["FI","Platinum","6712S","0089","LB10","5TDAAAB52TS149480","FE PC 2T 3C D5 FL J6 MF PL",60606,"Y"],
+["A","XLE","6708S","0089","EA20","5TDAAAB57TS38I544","FE BS PC 2T",49088,"Y"],
+["A","XLE","6708S","0218","EA20","5TDAAAB53TS38H536","FE 2T",48613,"Y"],
+["A","Limited","6710S","0089","LC20","5TDAAAB57TS38G275","FE PC SB SR 2T",55768,"N"],
+["A","Limited","6710S","03T3","LC20","5TDAAAB58TS37F317","FE PC SB 2T",54418,"Y"],
+["A","Platinum","6712S","01L5","LB40","5TDAAAB55TS39F248","FE PC 2T J6",58248,"Y"],
+["A","Platinum","6712S","0218","LB10","5TDAAAB58TS39F714","FE 2T G4 MF",57983,"N"],
+["A","Platinum","6712S","03T3","LB20","5TDAAAB52TS38H947","FE PC 2T",57903,"N"],
+["A","Hybrid XLE","6716S","0218","EA10","5TDABAA59TS40G153","FE 2T",48763,"N"],
+["A","Hybrid XLE","6722S","0089","EA10","5TDACAB51TS37F380","FE PC 2T",50838,"Y"],
+["A","Hybrid XLE","6722S","01J9","EA10","5TDACAB58TS36E442","FE SR 2T",51713,"Y"],
+["A","Hybrid Limited","6724S","0089","LC10","5TDACAB52TS41G325","FE BS PC SB 2T 3T 43 DH",57773,"Y"],
+["A","Hybrid Limited","6724S","01L5","LC20","5TDACAB52TS38G937","FE PC SB SR 2T",57518,"Y"],
+["A","Hybrid Limited","6724S","01L5","LC20","5TDACAB56TS38I156","FE PC SB SR 2T 3T 43 87 D5 DH",59393,"Y"],
+["A","Hybrid Limited","6724S","0218","LC10","5TDACAB53TS38G560","FE SB 2T BM D5 MF",56298,"Y"],
+["A","Hybrid Limited","6724S","0218","LC20","5TDACAB54TS39H065","FE SR 2T DH",57373,"N"],
+["A","Hybrid Limited","6724S","08X8","LC20","5TDACAB54TS38H216","FE SB 3C 43 MF V1",56582,"Y"],
+["A","Hybrid MAX Platinum","6732S","0218","LA40","5TDADAB53TS40F802","FE 2T 3C D5 FL",64191,"Y"],
+["A","Hybrid MAX Platinum","6732S","03T3","LA20","5TDADAB55TS41G123","FE PC 3P 3T 87 BM D5 DH G4 J6 MF PL",65564,"Y"],
+["A","Hybrid Nightshade","6733S","0089","LD20","5TDACAB56TS39G662","FE BK PC 2T MF",56708,"Y"],
+["A","Hybrid Nightshade","6733S","01H5","LD20","5TDACAB57TS31I858","FE BK SB SR 2T BM MF",58463,"Y"],
+["A","Hybrid Nightshade","6733S","0218","LD20","5TDACAB5XTS39H331","FE BK SB SR 2T 43 DH",59303,"Y"]
+];
+function drive(model){return model.startsWith("6716")?"FWD":"AWD";}
+function isTempVin(v){return /[A-Z]/.test(v.slice(11,14)) && /\d[A-Z]\d{3}$/.test(v);}
+function codesText(codes){
+  const known=[],raw=[];
+  codes.split(/\s+/).forEach(c=>{ if(c in OPT){ if(OPT[c]) known.push(OPT[c]); } else raw.push(c); });
+  let t=known.join(", "); if(raw.length) t+=(t?"; ":"")+"additional accessories ("+raw.join(" ")+")"; return t;
+}
+function unitCard(u,avail){
+  const [cat,trim,model,ext,int_,vin,codes,msrp,res]=u; const e=EXT[ext]||[ext,"#666"]; const pt=TRIMPT[trim];
+  const name=`2026 Grand Highlander ${trim} ${drive(model)}`;
+  const temp=isTempVin(vin);
+  const sms=`sms:+13196311461?&body=${encodeURIComponent(`Hi Josh, I'd like to reserve the ${name} in ${e[0]}, MSRP $${msrp.toLocaleString()}, VIN ${vin}.`)}`;
+  return `<div class="unit ${avail?'avail':'sold'}" style="--pc:var(--${pt==='hybrid'?'hy':pt==='max'?'mx':'gs'})">
+    <span class="${avail?'badge-av':'badge-sold'}">${avail?'AVAILABLE':'SOLD'}</span>
+    <span class="ptchip">${PT[pt].name}</span>
+    <h3>${name}</h3>
+    <div class="line"><span class="sw"><i style="background:${e[1]}"></i>${e[0]}</span> · ${INT[int_]||int_} interior</div>
+    <div class="price">$${msrp.toLocaleString()}<small>MSRP as built</small></div>
+    <div class="line"><b>Status</b>${CAT[cat]||cat}${cat==='A'?' · '+(temp?'Temp VIN':'VIN'):''}</div>
+    ${avail?`<div class="line"><b>VIN</b>${vin}</div>`:''}
+    <div class="line"><b>Equipment</b>${codesText(codes)}</div>
+    ${avail?`<a class="reserve" href="${sms}">Reserve — Text Josh</a><div class="line" style="margin-top:6px"><a href="#trim-${trim.includes('Platinum')?(pt==='max'?'maxplat':'platinum'):trim.includes('Nightshade')?'night':trim.includes('MAX')?'maxlimited':trim.includes('Limited')?'limited':'xle'}" style="color:var(--muted);font-size:12px">See what this trim includes ↑</a></div>`:''}
+  </div>`;
+}
+function renderInventory(){
+  const root=document.getElementById('invroot');
+  if(!SHEET_LIVE){root.innerHTML="<div class=\"note\">Inventory is temporarily offline. Call or text Josh at 319-631-1461 for what is open right now.</div>";return;}
+  const av=INV.filter(u=>u[8]==='N'), sold=INV.filter(u=>u[8]!=='N');
+  const order={G:0,FI:1,A:2};
+  av.sort((a,b)=>order[a[0]]-order[b[0]]||a[7]-b[7]); sold.sort((a,b)=>a[1].localeCompare(b[1])||a[7]-b[7]);
+  root.innerHTML=`<div class="inv-sub" style="color:#7dffb0">Available now<span>${av.length} unit${av.length===1?'':'s'} open</span></div><div class="inv-grid">${av.map(u=>unitCard(u,true)).join('')}</div>
+  <div class="inv-sub" style="color:#ff8a94">Sold<span>${sold.length} units spoken for — shown for reference</span></div><div class="inv-grid">${sold.map(u=>unitCard(u,false)).join('')}</div>`;
+}
+renderInventory();
+
 </script>
 </body>
 </html>
