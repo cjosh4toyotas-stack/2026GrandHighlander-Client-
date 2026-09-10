@@ -537,7 +537,7 @@ renderTrims();renderMatrix();renderColors();renderSpecs();
 const SHEET_LIVE = true;
 const EXT={"01J9":["Celestial Silver Metallic","#b8bcc2"],"0218":["Midnight Black Metallic","#0d0d0f"],"0089":["Wind Chill Pearl","#f1f2f0"],"03T3":["Ruby Flare Pearl","#8e1220"],"01L5":["Heavy Metal","#4a4d52"],"08X8":["Blueprint","#1f3c6e"],"01H5":["Cement","#9c9a94"],"01L6":["Storm Cloud","#6d7378"]};
 const INT={EA20:"Black SofTex®",EA10:"Light Gray SofTex®",LC20:"Black Leather",LC10:"Light Gray Leather",LD20:"Black Leather",LB10:"Light Gray Leather",LB20:"Black Leather",LB40:"Portobello Leather",LA20:"Black Leather and Ultrasuede®",LA10:"Light Gray Leather and Ultrasuede®",LA40:"Portobello Leather and Ultrasuede®"};
-const OPT={SR:"Panoramic Moonroof",SB:"Panoramic View Monitor",BS:"8-passenger Bench Seat",PC:"Premium Paint",DH:"Tow Hitch Receiver Package",'2T':"All-Weather Floor Liner Package",G4:"Illuminated Door Sills",J6:"Illuminated Cargo Sills",MF:"Mudguards",PL:"Logo Side Puddle Lamp",D5:"Door Edge Guards",'43':"Rear Hatch Cargo Lamps",'87':"Toyota Multimedia Screen Protector",WL:"Alloy Wheel Locks",FE:null};
+const OPT={SR:"Panoramic Moonroof",SB:"Panoramic View Monitor",BS:"8-passenger Bench Seat",PC:"Premium Paint",DH:"Tow Hitch Receiver Package",'2T':"All-Weather Floor Liner Package",G4:"Illuminated Door Sills",J6:"Illuminated Cargo Sills",MF:"Mudguards",PL:"Logo Side Puddle Lamp",D5:"Door Edge Guards",'43':"Rear Hatch Cargo Lamps",'87':"Toyota Multimedia Screen Protector",WL:"Alloy Wheel Locks",'3T':"Cross Bar Kit",'3P':"Paint Protection Film: Hood, Fenders, Mirror Backs & Door Cups",BM:"Body Side Moldings",'3C':"Blackout Emblem Overlays And Nameplate Overlay",V1:"Integrated Dashcam",FE:null};
 const CAT={G:"In stock",FI:"In transit",A:"Scheduled for production"};
 const TRIMPT={"Hybrid XLE":"hybrid","Hybrid Limited":"hybrid","Hybrid Nightshade":"hybrid","Hybrid MAX Platinum":"max","Hybrid MAX Limited":"max","XLE":"gas","Limited":"gas","Platinum":"gas"};
 // [cat, trim, model, ext, int, vin, codes, msrp, reserved]
@@ -596,7 +596,8 @@ function unitCard(u,avail){
 function renderInventory(){
   const root=document.getElementById('invroot');
   if(!SHEET_LIVE){root.innerHTML="<div class=\"note\">Inventory is temporarily offline. Call or text Josh at 319-631-1461 for what is open right now.</div>";return;}
-  const av=INV.filter(u=>u[8]==='N'), sold=INV.filter(u=>u[8]!=='N');
+  const isOpen=u=>u[8]==='N' && !u[2].startsWith('6724'); // every Hybrid Limited (6724) is spoken for
+  const av=INV.filter(isOpen), sold=INV.filter(u=>!isOpen(u));
   const order={G:0,FI:1,A:2};
   av.sort((a,b)=>order[a[0]]-order[b[0]]||a[7]-b[7]); sold.sort((a,b)=>a[1].localeCompare(b[1])||a[7]-b[7]);
   root.innerHTML=`<div class="inv-sub" style="color:#7dffb0">Available now<span>${av.length} unit${av.length===1?'':'s'} open</span></div><div class="inv-grid">${av.map(u=>unitCard(u,true)).join('')}</div>
