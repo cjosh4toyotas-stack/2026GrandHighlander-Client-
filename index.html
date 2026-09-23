@@ -1,610 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026 Grand Highlander — Trim & Powertrain Guide | Josh at McGrath Toyota</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 Toyota Grand Highlander Availability — McGrath Toyota of Iowa City</title>
 <style>
-:root{--red:#EB0A1E;--hy:#3b9cff;--mx:#ff8c1a;--gs:#b0b6bd;--bg:#0b0b0d;--panel:#141418;--panel2:#1c1c22;--line:#2a2a33;--text:#f2f2f4;--muted:#a3a3ad;--green:#2ecc71;--gold:#f0b429;--dim:#55555f}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.5}
-a{color:#fff}
-.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-header{border-bottom:2px solid var(--red);background:linear-gradient(180deg,#151519 0%,#0b0b0d 100%);position:relative;overflow:hidden}
-header .wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding-top:28px;padding-bottom:28px}
-header h1{margin:0 0 6px;font-size:30px;letter-spacing:.3px}
-header h1 span{color:var(--red)}
-header p{margin:0;color:var(--muted)}
-header img{height:46px;width:auto;flex:none}
-.tag{display:inline-block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);font-weight:bold;margin-bottom:8px}
-nav.jump{display:flex;flex-wrap:wrap;gap:8px;padding:14px 0;border-bottom:1px solid var(--line)}
-nav.jump a{text-decoration:none;color:var(--muted);font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:999px}
-nav.jump a:hover{color:#fff;border-color:#fff}
-section{padding:40px 0 10px}
-h2{font-size:24px;margin:0 0 6px;padding-left:12px;border-left:4px solid var(--red)}
-.lead{color:var(--muted);margin:0 0 22px;max-width:820px}
-.grid{display:grid;gap:16px}
-.g3{grid-template-columns:repeat(3,1fr)}
-.g2{grid-template-columns:repeat(2,1fr)}
-@media(max-width:900px){.g3,.g2{grid-template-columns:1fr}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;position:relative}
-.card h3{margin:0 0 4px;font-size:20px}
-.card .sub{color:var(--muted);font-size:13px;margin-bottom:14px}
-.stat{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
-.stat div{background:var(--panel2);border-radius:8px;padding:10px 12px}
-.stat b{display:block;font-size:22px;line-height:1.1}
-.stat small{color:var(--muted);font-size:12px}
-ul.clean{list-style:none;margin:0;padding:0}
-ul.clean li{padding:5px 0 5px 18px;position:relative;border-top:1px solid var(--line);font-size:14px}
-ul.clean li:first-child{border-top:0}
-ul.clean li:before{content:"";position:absolute;left:2px;top:13px;width:7px;height:7px;background:var(--red);transform:rotate(45deg)}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
-.chip{font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);cursor:pointer;user-select:none}
-.chip.on{background:var(--red);border-color:var(--red);color:#fff}
-.chip.static{cursor:default}
-.filter{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 20px}
-.filter span{color:var(--muted);font-size:13px;margin-right:4px}
-.fbtn{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:#fff;cursor:pointer;font-size:14px}
-.fbtn.on{background:var(--red);border-color:var(--red)}
-.trim{transition:opacity .25s}
-.trim.dimmed{opacity:.28}
-.trim .pt{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
-.trim .badge{position:absolute;top:16px;right:16px;font-size:11px;padding:3px 9px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--muted)}
-.adds{margin-top:12px}
-.adds h4{margin:12px 0 4px;font-size:13px;color:var(--red);text-transform:uppercase;letter-spacing:1px}
-.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
-table{border-collapse:collapse;width:100%;min-width:900px;font-size:13px}
-th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-th{position:sticky;top:0;background:#101014;text-align:left;font-size:13px;z-index:2}
-th.trimh{text-align:center;cursor:pointer;min-width:120px}
-th.trimh small{display:block;color:var(--muted);font-weight:normal;font-size:11px}
-th.trimh.off{opacity:.35}
-td.c{text-align:center;font-weight:bold}
-td.S{color:var(--green)}
-td.O{color:var(--gold)}
-td.N{color:var(--dim)}
-td.txt{font-weight:normal;font-size:12px;color:#ddd;text-align:center}
-tr.grp td{background:#101014;color:var(--red);font-weight:bold;letter-spacing:1px;font-size:12px;text-transform:uppercase}
-td.feat{color:#e8e8ec;min-width:260px}
-td.feat small{display:block;color:var(--muted)}
-.legend{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0 0;font-size:13px;color:var(--muted)}
-.legend b{font-weight:bold}
-.sw{display:inline-flex;align-items:center;gap:6px;font-size:13px;margin:4px 12px 4px 0}
-.sw i{width:16px;height:16px;border-radius:50%;border:1px solid #666;display:inline-block}
-.note{background:var(--panel2);border-left:3px solid var(--red);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:14px}
-.disc{font-size:12px;color:var(--muted);line-height:1.55}
-.disc p{margin:0 0 8px}
-footer{margin-top:40px;border-top:2px solid var(--red);background:#101014;padding:28px 0}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
-footer b{font-size:18px}
-footer p{margin:2px 0;color:var(--muted)}
-.cta{display:inline-block;background:var(--red);color:#fff;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:bold}
-.pt-hybrid{--pc:var(--hy)}.pt-max{--pc:var(--mx)}.pt-gas{--pc:var(--gs)}
-.card.ptcard{border-top:4px solid var(--pc)}
-.card.ptcard .tag{color:var(--pc)}
-.fbtn[data-pt=hybrid]{border-color:var(--hy);color:var(--hy)}.fbtn[data-pt=max]{border-color:var(--mx);color:var(--mx)}.fbtn[data-pt=gas]{border-color:var(--gs);color:var(--gs)}
-.fbtn.on[data-pt=hybrid]{background:var(--hy);color:#000}.fbtn.on[data-pt=max]{background:var(--mx);color:#000}.fbtn.on[data-pt=gas]{background:var(--gs);color:#000}
-.chip[data-pt=hybrid]{border-color:var(--hy);color:var(--hy)}.chip[data-pt=max]{border-color:var(--mx);color:var(--mx)}.chip[data-pt=gas]{border-color:var(--gs);color:var(--gs)}
-.chip.on[data-pt=hybrid]{background:var(--hy);color:#000}.chip.on[data-pt=max]{background:var(--mx);color:#000}.chip.on[data-pt=gas]{background:var(--gs);color:#000}
-.trim{overflow:hidden}
-.trim:before{content:"";position:absolute;left:0;top:0;right:0;height:5px;background:var(--line)}
-.trim[data-pts="hybrid"]:before{background:var(--hy)}.trim[data-pts="max"]:before{background:var(--mx)}.trim[data-pts="gas"]:before{background:var(--gs)}
-.trim[data-pts="hybrid gas"]:before{background:linear-gradient(90deg,var(--hy) 50%,var(--gs) 50%)}
-.ptbox .stat div{border-left:3px solid var(--pc)}
-th.trimh,th.sh{box-shadow:inset 0 4px 0 var(--line)}
-th.trimh[data-pts="hybrid"],th.sh[data-pts="hybrid"]{box-shadow:inset 0 4px 0 var(--hy)}th.trimh[data-pts="max"],th.sh[data-pts="max"]{box-shadow:inset 0 4px 0 var(--mx)}th.trimh[data-pts="gas"],th.sh[data-pts="gas"]{box-shadow:inset 0 4px 0 var(--gs)}
-th.trimh[data-pts="hybrid gas"]{box-shadow:none;background:linear-gradient(90deg,var(--hy) 50%,var(--gs) 50%) top/100% 4px no-repeat,#101014}
-.key{display:flex;gap:16px;flex-wrap:wrap;align-items:center;padding:12px 0 0;font-size:13px;color:var(--muted)}
-.key i{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:6px}
-.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:1px}
+  :root{
+    --red:#EB0A1E;
+    --ink:#1a1a1a;
+    --gray:#5a5a5a;
+    --line:#d9d9d9;
+    --bg:#ffffff;
+    --soft:#f6f6f6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:Arial, Helvetica, sans-serif;color:var(--ink);background:var(--bg);line-height:1.45;}
+  .page{max-width:820px;margin:0 auto;padding:28px 22px 40px;}
 
-/* inventory */
-.inv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-@media(max-width:900px){.inv-grid{grid-template-columns:1fr}}
-.unit{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;position:relative;overflow:hidden}
-.unit.avail{border-color:rgba(46,204,113,.55);background:linear-gradient(90deg,rgba(46,204,113,.10),var(--panel) 45%)}
-.unit.sold{border-color:rgba(235,10,30,.45);background:linear-gradient(90deg,rgba(235,10,30,.10),var(--panel) 45%)}
-.unit:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--line)}
-.unit.avail:before{background:var(--green)}.unit.sold:before{background:var(--red)}
-.unit .ptchip{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--pc);color:var(--pc);margin-bottom:6px}
-.unit h3{margin:0 0 2px;font-size:17px;padding-right:110px}
-.unit .price{font-size:22px;font-weight:bold;margin:6px 0 2px}
-.unit .price small{font-size:12px;color:var(--muted);font-weight:normal;margin-left:6px}
-.unit .line{font-size:13px;color:#ddd;margin:2px 0}
-.unit .line b{color:var(--muted);font-weight:normal;margin-right:4px}
-.unit .stat-lbl{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:8px}
-.badge-av,.badge-sold{position:absolute;top:14px;right:14px;font-size:11px;font-weight:bold;letter-spacing:1.5px;padding:5px 11px;border-radius:999px}
-.badge-av{background:#0f3d24;color:#7dffb0;border:1px solid var(--green);box-shadow:0 0 10px rgba(46,204,113,.55);animation:glow 1.8s ease-in-out infinite}
-@keyframes glow{0%,100%{box-shadow:0 0 6px rgba(46,204,113,.35)}50%{box-shadow:0 0 16px rgba(46,204,113,.9)}}
-.badge-sold{background:#3a0a10;color:#ff8a94;border:1px solid var(--red)}
-.unit.sold{opacity:.6}
-.unit.sold h3{padding-right:80px}
-.reserve{display:inline-block;margin-top:10px;background:var(--red);color:#fff;text-decoration:none;font-weight:bold;font-size:13px;padding:9px 14px;border-radius:8px}
-.inv-sub{font-size:16px;margin:26px 0 10px;color:#fff}
-.inv-sub span{color:var(--muted);font-weight:normal;font-size:13px;margin-left:8px}
-@media(prefers-reduced-motion:reduce){.badge-av{animation:none}}
-@media print{.badge-av{animation:none;box-shadow:none}.unit.sold{opacity:.7}.reserve{display:none}body{background:#fff;color:#000}.card,.tablewrap{background:#fff;border-color:#bbb}.trim.dimmed{opacity:1}th{background:#eee;color:#000}td.S{color:#0a7a3a}td.O{color:#9a6b00}td.N{color:#999}.filter,nav.jump,.cta{display:none}header,footer{background:#fff;color:#000}header p,footer p{color:#333}.stat div,.note{background:#f3f3f3;color:#000}}
+  header{border-bottom:4px solid var(--red);padding-bottom:14px;margin-bottom:6px;display:flex;flex-direction:row-reverse;align-items:flex-start;gap:16px;}
+  .logo{width:84px;height:56px;object-fit:contain;flex-shrink:0;}
+  .head-text{flex:1;min-width:0;}
+  .dealer{font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);font-weight:bold;}
+  h1{font-size:30px;font-weight:bold;margin-top:4px;letter-spacing:-0.5px;}
+  .asof{margin-top:8px;font-size:13px;color:var(--gray);}
+  .asof strong{color:var(--ink);}
+  .cycle{display:inline-block;margin-top:6px;font-size:13px;color:var(--ink);background:var(--soft);border-left:3px solid var(--red);padding:6px 10px;}
+
+  section{margin-top:26px;}
+  h2{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--red);border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:2px;}
+
+  .unit{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);}
+  .unit:last-child{border-bottom:none;}
+  .u-main{min-width:0;}
+  .u-trim{font-size:17px;font-weight:bold;}
+  .swatch{display:inline-block;width:13px;height:13px;border-radius:50%;margin-right:7px;vertical-align:-1px;border:1px solid rgba(0,0,0,0.25);}
+  .sw-black{background:#0b0b0d;}
+  .sw-meteor{background:#b9bcbe;}
+  .sw-blueprint{background:#20304f;}
+  .sw-icecap{background:#f5f6f7;}
+  .sw-ruby{background:#8e1b2f;}
+  .sw-storm{background:#6e7a86;}
+  .sw-pearl{background:#f4f3ee;}
+  .sw-heavy{background:#4a4d52;}
+  .sw-cement{background:#9c9a94;}
+  .badge{display:inline-block;font-size:10px;font-weight:bold;letter-spacing:1.5px;padding:3px 9px;border-radius:999px;vertical-align:2px;margin-left:8px;}
+  .badge-av{background:#e6f8ee;color:#0a7a3a;border:1px solid #2ecc71;box-shadow:0 0 8px rgba(46,204,113,.6);animation:glow 1.8s ease-in-out infinite;}
+  @keyframes glow{0%,100%{box-shadow:0 0 4px rgba(46,204,113,.35)}50%{box-shadow:0 0 12px rgba(46,204,113,.9)}}
+  .badge-sold{background:#fdecee;color:#b3000f;border:1px solid var(--red);}
+  .unit.sold{opacity:.6;}
+  .unit.sold .u-trim{color:#3a3a3a;}
+  .h2-sold{color:var(--red);}
+  .soldnote{font-size:13px;color:var(--gray);margin:10px 0 4px;}
+  .soldgrp{font-size:13px;font-weight:bold;color:var(--ink);margin-top:16px;padding-bottom:4px;border-bottom:1px solid var(--line);}
+  @media(prefers-reduced-motion:reduce){.badge-av{animation:none}}
+  .u-color{font-size:14px;color:var(--ink);margin-top:2px;}
+  .u-timeline{font-size:12px;color:#1a1a1a;margin-top:4px;font-weight:bold;}
+  .u-timeline span{color:#EB0A1E;}
+  .pipe-wrap{padding:10px 0 14px;border-bottom:1px solid var(--line);}
+  .pipe-head{font-size:12px;margin:2px 0 2px;}
+  .pipe-head strong{color:var(--ink);}
+  .pipe-head .stat{display:inline-block;background:#1a1a1a;color:#fff;font-size:10px;letter-spacing:1px;padding:2px 7px;margin-right:8px;vertical-align:1px;}
+  .pipe{width:100%;border-collapse:collapse;table-layout:fixed;margin-top:16px;}
+  .pipe td{text-align:center;vertical-align:top;padding:0 2px;}
+  .pipe td.tk{border-top:3px solid #dce6f7;padding:0;}
+  .pdot{width:12px;height:12px;border-radius:50%;background:#ffffff;border:3px solid #c6d4ee;margin:-10px auto 0;}
+  .pdot.on{background:#2a6df4;border-color:#2a6df4;}
+  .pd{font-size:9.5px;color:#5a5a5a;margin-top:5px;line-height:1.25;}
+  .pn{font-size:9.5px;font-weight:bold;color:#1a1a1a;line-height:1.2;margin-top:1px;}
+  @media(max-width:520px){ .pd,.pn{font-size:8px;} }
+  .u-equip{font-size:12px;color:var(--gray);margin-top:3px;letter-spacing:0.5px;}
+  .u-right{text-align:right;white-space:nowrap;}
+  .u-price{font-size:17px;font-weight:bold;}
+  .u-stock{font-size:12px;color:var(--gray);margin-top:2px;}
+  .u-vin{font-size:10.5px;color:var(--gray);margin-top:2px;font-family:'Courier New',Courier,monospace;letter-spacing:0.3px;}
+
+  .note{margin-top:24px;font-size:13px;color:var(--gray);border-top:1px solid var(--line);padding-top:14px;}
+  .note p{margin-bottom:8px;}
+
+  footer{margin-top:26px;background:var(--ink);color:#fff;padding:18px 20px;}
+  .f-name{font-size:16px;font-weight:bold;}
+  .f-line{font-size:13px;margin-top:4px;color:#e8e8e8;}
+  .f-line a{color:#fff;text-decoration:none;font-weight:bold;}
+
+  @media(max-width:520px){
+    h1{font-size:24px;}
+    .unit{flex-direction:column;gap:4px;}
+    .u-right{text-align:left;}
+  }
+  @media print{
+    .badge-av{animation:none;box-shadow:none}
+    .page{padding:0;}
+    footer{background:none;color:var(--ink);border-top:4px solid var(--red);padding:14px 0 0;}
+    .f-line{color:var(--ink);}
+    .f-line a{color:var(--ink);}
+  }
 </style>
+<script>
+/* ============================================================
+   MASTER SWITCH — turn the sheet ON or OFF
+   SHEET_LIVE = true   -> sheet shows normally
+   SHEET_LIVE = false  -> sheet is hidden, "check back" message shows
+   To flip it: edit this file on GitHub, change true to false
+   (or false to true), commit. Live in about a minute.
+   ============================================================ */
+const SHEET_LIVE = true;
+</script>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <div>
-      <div class="tag">2026 Model Year · McGrath Toyota of Iowa City</div>
-      <h1>2026 Grand Highlander <span>Trim & Powertrain Guide</span></h1>
-      <p>Every trim, every powertrain, and exactly what changes between them — built from Toyota's 2026 Grand Highlander Sourcebook so nothing gets assumed.</p>
+<div class="page">
+
+  <header>
+    <img class="logo" src="data:image/png;base64,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" alt="Toyota">
+    <div class="head-text">
+    <div class="dealer">McGrath Toyota of Iowa City</div>
+    <h1>2026 Grand Highlander Availability</h1>
+    <div class="asof">Updated <strong>September 23, 2026</strong> &middot; All prices are MSRP</div>
+    <div class="cycle">Factory allocations arrive every two weeks &mdash; the next batch is expected soon. Units marked <b style="color:#0a7a3a">AVAILABLE</b> can be claimed today with a deposit; units marked <b style="color:#b3000f">SOLD</b> are already spoken for.</div>
     </div>
-    <img src="data:image/png;base64,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" alt="Toyota">
+  </header>
+
+  <div id="offline-msg" style="display:none;margin-top:40px;padding:26px 22px;background:#f6f6f6;border-left:4px solid #EB0A1E;">
+    <p style="font-size:17px;font-weight:bold;">This availability sheet is temporarily offline.</p>
+    <p style="font-size:14px;color:#5a5a5a;margin-top:8px;">We&rsquo;re updating it against the latest factory allocation. For current 2026 Grand Highlander availability, call or text Josh directly at <a href="tel:3196311461" style="color:#1a1a1a;font-weight:bold;">319-631-1461</a>.</p>
   </div>
-</header>
 
-<div class="wrap">
-<div class="key"><b style="color:#fff">Color key:</b> <span><i style="background:var(--hy)"></i>2.5L Hybrid</span><span><i style="background:var(--mx)"></i>Hybrid MAX</span><span><i style="background:var(--gs)"></i>2.4L Turbo gas</span><span style="margin-left:auto">Trims and columns are edged in the color of the powertrain they offer</span></div>
-<nav class="jump">
-  <a href="#powertrains">Powertrains</a>
-  <a href="#trims">Trims</a>
-  <a href="#matrix">Feature comparison</a>
-  <a href="#seating">Seating & space</a>
-  <a href="#colors">Colors</a>
-  <a href="#options">Factory options</a>
-  <a href="#specs">Specs</a>
-  <a href="#inventory">Inventory</a>
-  <a href="#disclaimers">Disclaimers</a>
-</nav>
-
-<!-- POWERTRAINS -->
-<section id="powertrains">
-  <h2>Three powertrains</h2>
-  <p class="lead">Every 2026 Grand Highlander is the same size inside and out — 201.4 in. long, 116.1 in. wheelbase, 97.5 cu. ft. behind the front seats. The powertrain decides how it drives, how much it tows, and what it costs to fuel.</p>
-  <div class="grid g3">
-    <div class="card ptcard pt-hybrid">
-      <div class="tag">Hybrid</div>
-      <h3>2.5L Hybrid</h3>
-      <div class="sub">Electronically controlled Continuously Variable Transmission (ECVT) · Electronic On-Demand AWD</div>
-      <div class="stat">
-        <div><b>245</b><small>net combined horsepower</small></div>
-        <div><b>36 / 32 / 34</b><small>EPA-est. city / hwy / combined mpg (AWD)</small></div>
-        <div><b>3,500 lb.</b><small>maximum towing capacity</small></div>
-        <div><b>17.17 gal.</b><small>fuel tank</small></div>
+  <div id="sheet-content">
+  <section>
+    <h2>Factory Allocated &mdash; Scheduled for Production</h2>
+    <div class="unit">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid XLE FWD <span class="badge badge-av">AVAILABLE</span></div>
+        <div class="u-color"><span class="swatch sw-meteor"></span>Celestial Silver Metallic &middot; Interior EA10</div>
+        <div class="u-equip">Options: All-Weather Floor Liner Package (2T)</div>
+        
       </div>
-      <ul class="clean">
-        <li>2.5-liter L4HV Double Overhead Cam (DOHC) 16-valve D-4S injection engine; 245 combined net hp, 175 lb.-ft. at 4400 rpm</li>
-        <li>Drive Mode Select with Sport, Eco, Normal, EV and Trail Modes</li>
-        <li>Predictive Fuel-Efficient Drive</li>
-        <li>Two 120V outlets (1500W shared) on Hybrid Limited and Hybrid Nightshade</li>
-        <li>Available on: Hybrid LE, Hybrid XLE, Hybrid Limited, Hybrid Nightshade</li>
-      </ul>
-    </div>
-    <div class="card ptcard pt-max">
-      <div class="tag">Hybrid MAX</div>
-      <h3>2.4L Turbo Hybrid MAX</h3>
-      <div class="sub">Direct Shift-6AT 6-speed automatic · Full-Time Electronic All-Wheel Drive</div>
-      <div class="stat">
-        <div><b>362</b><small>net combined horsepower</small></div>
-        <div><b>26 / 27 / 27</b><small>EPA-est. city / hwy / combined mpg</small></div>
-        <div><b>5,000 lb.</b><small>maximum towing capacity</small></div>
-        <div><b>17.17 gal.</b><small>fuel tank</small></div>
+      <div class="u-right">
+        <div class="u-price">$48,763</div><div class="u-vin">Temp. VIN 5TDABAA59TS40G153</div>
       </div>
-      <ul class="clean">
-        <li>2.4-liter 4-cylinder turbo Hybrid MAX 16-valve D-4S injection engine with Dual VVT-i; 362 net combined hp at 6000 rpm, 400 lb.-ft. at 2000–3000 rpm</li>
-        <li>Drive Mode Select with Sport, Eco, Normal and Snow Modes</li>
-        <li>Multi-Terrain Select (MTS) with MUD & SAND, ROCK & DIRT, and NORMAL Modes</li>
-        <li>Dual exhaust; paddle shifters; Predictive Fuel-Efficient Drive</li>
-        <li>Available on: Hybrid MAX Limited, Hybrid MAX Platinum</li>
-      </ul>
     </div>
-    <div class="card ptcard pt-gas">
-      <div class="tag">Gas</div>
-      <h3>2.4L Turbo</h3>
-      <div class="sub">Direct Shift-8AT 8-speed automatic · Dynamic Torque Control AWD (FWD on LE / XLE / Limited)</div>
-      <div class="stat">
-        <div><b>265</b><small>horsepower</small></div>
-        <div><b>21 / 27 / 23</b><small>EPA-est. mpg, XLE AWD (Limited AWD / Platinum: 20 / 26 / 22)</small></div>
-        <div><b>5,000 lb.</b><small>maximum towing capacity</small></div>
-        <div><b>17.83 gal.</b><small>fuel tank</small></div>
+    <div class="unit">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid XLE FWD <span class="badge badge-av">AVAILABLE</span></div>
+        <div class="u-color"><span class="swatch sw-meteor"></span>Celestial Silver Metallic &middot; Interior EA10</div>
+        <div class="u-equip">Options: All-Weather Floor Liner Package (2T)</div>
+        
       </div>
-      <ul class="clean">
-        <li>2.4-liter 4-cylinder turbocharged 16-valve D-4S injection engine with Dual VVT-i and Stop and Start Engine System; 265 hp at 6000 rpm, 310 lb.-ft. at 1700–3600 rpm</li>
-        <li>Drive Mode Select with Sport, Eco, Normal and Snow Modes</li>
-        <li>Multi-Terrain Select on Platinum</li>
-        <li>Available on: LE, XLE, Limited, Platinum</li>
-      </ul>
-    </div>
-  </div>
-  <div class="note"><b>Reading the three side by side.</b> The 2.5L Hybrid is the efficiency choice — the same 34 mpg combined on XLE, Limited and Nightshade. Hybrid MAX is the performance choice: 362 hp, 400 lb.-ft., a conventional 6-speed with paddle shifters, full-time AWD and 5,000 lb. towing, at 27 mpg combined. Gas gives the same 5,000 lb. towing with an 8-speed, and it's the only way to get a Platinum without Hybrid MAX.</div>
-</section>
-
-<!-- TRIMS -->
-<section id="trims">
-  <h2>Trims — what each one adds</h2>
-  <p class="lead">Cards list only what a trim carries. Tap a powertrain to focus on the trims that offer it, and tap the chips inside a card to see that version's numbers.</p>
-  <div class="filter" id="ptfilter">
-    <span>Show trims with:</span>
-    <button class="fbtn on" data-pt="all">All</button>
-    <button class="fbtn" data-pt="hybrid">2.5L Hybrid</button>
-    <button class="fbtn" data-pt="max">Hybrid MAX</button>
-    <button class="fbtn" data-pt="gas">2.4L Turbo gas</button>
-  </div>
-  <div class="grid g2" id="trimcards"></div>
-</section>
-
-<!-- MATRIX -->
-<section id="matrix">
-  <h2>Feature comparison — exact status on every trim</h2>
-  <p class="lead">Only features that differ between trims are listed. Tap a column header to hide or show that trim. Standard equipment shared by every trim from XLE up is listed below the table.</p>
-  <div class="legend"><span><b style="color:var(--green)">S</b> Standard</span><span><b style="color:var(--gold)">O</b> Optional (factory option)</span><span><b style="color:var(--dim)">—</b> Not offered on this trim</span></div>
-  <div style="height:12px"></div>
-  <div class="tablewrap"><table id="mtx"></table></div>
-  <div class="card" style="margin-top:18px">
-    <h3 style="font-size:16px">Standard on every trim from XLE up</h3>
-    <ul class="clean" style="columns:2;column-gap:30px">
-      <li>12.3-in. Toyota Audio Multimedia touchscreen with wireless Apple CarPlay® and Android Auto™ compatibility, SiriusXM® 3-month trial subscription</li>
-      <li>Toyota Safety Sense™ 3.0 (TSS 3.0) — Pre-Collision System with Pedestrian Detection, Full-Speed Range Dynamic Radar Cruise Control, Lane Departure Alert with Steering Assist, Lane Tracing Assist, Road Sign Assist, Automatic High Beams, Proactive Driving Assist</li>
-      <li>Blind Spot Monitor (BSM) with Rear Cross-Traffic Alert (RCTA); Safe Exit Alert (SEA)</li>
-      <li>Three-zone automatic climate control with separate second-row control panel and second- and third-row vents</li>
-      <li>Smart Key System on all doors and liftgate with Push Button Start; Digital Key capability (Remote Connect subscription required)</li>
-      <li>Qi-compatible wireless smartphone charging with charge indicator light</li>
-      <li>Seven USB-C ports (one media port and six charging ports) and two 12V outlets</li>
-      <li>13 cup and bottle holders; soft-touch roll-top center console with removable utility tray</li>
-      <li>Manual second-row retractable rear window sunshades</li>
-      <li>Heated front seats; 10-way power-adjustable driver's seat including power lumbar support; 8-way power-adjustable front passenger seat</li>
-      <li>LED headlights and LED taillights; acoustic noise-reducing front windshield and front side windows; privacy glass</li>
-      <li>Eight airbags; Star Safety System™; Hill Start Assist Control; Trailer-Sway Control; Tire Pressure Monitor System</li>
-      <li>Safety Connect® and Service Connect (5-year minimum trial); Remote Connect and Drive Connect (1-year trial); Wi-Fi Connect (up to 30-day/3 GB trial)</li>
-    </ul>
-  </div>
-</section>
-
-<!-- SEATING -->
-<section id="seating">
-  <h2>Seating & space</h2>
-  <div class="grid g2">
-    <div class="card">
-      <h3>Seven or eight seats</h3>
-      <ul class="clean">
-        <li><b>7-passenger</b> — second-row fold-down captain's chairs with fold-down inboard armrests, adjustable headrests and two cup holders mounted on the floor; 60/40 split, fold-down third-row seats with sliding headrests and recline function. Standard on XLE, Hybrid XLE, Limited, Hybrid Limited, Hybrid Nightshade, Hybrid MAX Limited, Platinum, Hybrid MAX Platinum.</li>
-        <li><b>8-passenger</b> — 60/40 split, sliding and reclining fold-down second-row bench seats. Standard on LE and Hybrid LE; a no-cost factory option (Bench Seat, code BS) on XLE, Hybrid XLE, Limited and Hybrid Limited. Not offered on Nightshade, Hybrid MAX Limited, Platinum or Hybrid MAX Platinum.</li>
-        <li>LATCH lower anchors and tethers on outboard second-row seats and tether anchor on third-row seats</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Room, every trim</h3>
-      <div class="stat">
-        <div><b>33.5 in.</b><small>third-row leg room</small></div>
-        <div><b>37.2 in.</b><small>third-row head room</small></div>
-        <div><b>39.5 in.</b><small>second-row leg room</small></div>
-        <div><b>57.5 in.</b><small>third-row shoulder room</small></div>
-        <div><b>20.6 cu. ft.</b><small>cargo, all seats up</small></div>
-        <div><b>57.9 cu. ft.</b><small>cargo behind second row</small></div>
-        <div><b>97.5 cu. ft.</b><small>cargo behind front seats</small></div>
-        <div><b>8 in.</b><small>ground clearance</small></div>
+      <div class="u-right">
+        <div class="u-price">$48,763</div><div class="u-vin">Temp. VIN 5TDABAA59TS42H276</div>
       </div>
-      <p class="disc">Front-row head room is 41.5 in., or 40 in. with the panoramic moonroof; second-row head room 40.2 in., or 38.5 in. with the panoramic moonroof.</p>
     </div>
+    <div class="unit">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid XLE FWD <span class="badge badge-av">AVAILABLE</span></div>
+        <div class="u-color"><span class="swatch sw-pearl"></span>Wind Chill Pearl &middot; Interior EA10</div>
+        <div class="u-equip">Options: Premium Paint (PC) &middot; All-Weather Floor Liner Package (2T)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$49,238</div><div class="u-vin">Temp. VIN 5TDABAA55TS42F329</div>
+      </div>
+    </div>
+    <div class="unit">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Limited AWD <span class="badge badge-av">AVAILABLE</span></div>
+        <div class="u-color"><span class="swatch sw-ruby"></span>Ruby Flare Pearl &middot; Interior LC20</div>
+        <div class="u-equip">Options: Bench Seat (BS) &middot; Premium Paint (PC) &middot; Panoramic View Monitor (SB) &middot; Panoramic Moonroof (SR) &middot; All-Weather Floor Liner Package (2T)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$55,768</div><div class="u-vin">Temp. VIN 5TDAAAB53TS43F021</div>
+      </div>
+    </div>
+    <div class="unit">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Platinum AWD <span class="badge badge-av">AVAILABLE</span></div>
+        <div class="u-color"><span class="swatch sw-ruby"></span>Ruby Flare Pearl &middot; Interior LB20</div>
+        <div class="u-equip">Options: Premium Paint (PC) &middot; All-Weather Floor Liner Package (2T)</div>
+        <div class="u-timeline">Scheduled for production week of <span>Sep 25</span></div>
+      </div>
+      <div class="u-right">
+        <div class="u-price">$57,903</div><div class="u-vin">Temp. VIN 5TDAAAB52TS38H947</div>
+      </div>
+    </div>
+    <div class="unit">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Platinum AWD <span class="badge badge-av">AVAILABLE</span></div>
+        <div class="u-color"><span class="swatch sw-heavy"></span>Heavy Metal &middot; Interior LB20</div>
+        <div class="u-equip">Options: Premium Paint (PC) &middot; All-Weather Floor Liner Package (2T)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$57,903</div><div class="u-vin">Temp. VIN 5TDAAAB59TS42F996</div>
+      </div>
+    </div>
+    <div class="unit">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Platinum AWD <span class="badge badge-av">AVAILABLE</span></div>
+        <div class="u-color"><span class="swatch sw-black"></span>Midnight Black Metallic &middot; Interior LB10</div>
+        <div class="u-equip">Options: All-Weather Floor Liner Package (2T) &middot; Illuminated Door Sills (G4) &middot; Mudguards (MF)</div>
+        <div class="u-timeline">Scheduled for production week of <span>Oct 7</span></div>
+      </div>
+      <div class="u-right">
+        <div class="u-price">$57,983</div><div class="u-vin">Temp. VIN 5TDAAAB58TS39F714</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soldwall">
+    <h2 class="h2-sold">Sold &mdash; Spoken For, Shown for Reference</h2>
+    <p class="soldnote">These 2026 Grand Highlanders were on our allocation and are already claimed. They show what has been moving through the store &mdash; if one of these is your spec, we can match you against the next allocation.</p>
+    <h3 class="soldgrp">Grand Highlander Hybrid XLE &middot; 1 sold</h3>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid XLE AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-pearl"></span>Wind Chill Pearl &middot; Interior EA10</div>
+        <div class="u-equip">Options: Premium Paint (PC) &middot; All-Weather Floor Liner Package (2T)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$50,838</div>
+      </div>
+    </div>
+    <h3 class="soldgrp">Grand Highlander Hybrid Limited &middot; 9 sold</h3>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid Limited AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-storm"></span>Storm Cloud &middot; Interior LC10</div>
+        <div class="u-equip">Options: Panoramic View Monitor (SB) &middot; All-Weather Floor Liner Package (2T)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$55,693</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid Limited AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-ruby"></span>Ruby Flare Pearl &middot; Interior LC20</div>
+        <div class="u-equip">Options: Premium Paint (PC) &middot; Panoramic View Monitor (SB) &middot; All-Weather Floor Liner Package (2T)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$56,168</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid Limited AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-black"></span>Midnight Black Metallic &middot; Interior LC10</div>
+        <div class="u-equip">Options: Panoramic View Monitor (SB) &middot; All-Weather Floor Liner Package (2T) &middot; Body Side Moldings (BM) &middot; Door Edge Guards (D5) &middot; Mudguards (MF)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$56,298</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid Limited AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-blueprint"></span>Blueprint &middot; Interior LC20</div>
+        <div class="u-equip">Options: Panoramic View Monitor (SB) &middot; Blackout Emblem Overlays And Nameplate Overlay (3C) &middot; Rear Hatch Cargo Lamps (43) &middot; Mudguards (MF) &middot; Integrated Dashcam (V1)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$56,582</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid Limited AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-storm"></span>Storm Cloud &middot; Interior LC20</div>
+        <div class="u-equip">Options: Panoramic View Monitor (SB) &middot; All-Weather Floor Liner Package (2T) &middot; Body Side Moldings (BM) &middot; Tow Hitch Receiver Package (DH) &middot; Mudguards (MF)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$57,063</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid Limited AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-heavy"></span>Heavy Metal &middot; Interior LC20</div>
+        <div class="u-equip">Options: Premium Paint (PC) &middot; Panoramic View Monitor (SB) &middot; Panoramic Moonroof (SR) &middot; All-Weather Floor Liner Package (2T)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$57,518</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid Limited AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-pearl"></span>Wind Chill Pearl &middot; Interior LC10</div>
+        <div class="u-equip">Options: Bench Seat (BS) &middot; Premium Paint (PC) &middot; Panoramic View Monitor (SB) &middot; All-Weather Floor Liner Package (2T) &middot; Cross Bar Kit (3T) &middot; Rear Hatch Cargo Lamps (43) &middot; Tow Hitch Receiver Package (DH)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$57,773</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid Limited AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-black"></span>Midnight Black Metallic &middot; Interior LC20</div>
+        <div class="u-equip">Options: Panoramic View Monitor (SB) &middot; Panoramic Moonroof (SR) &middot; All-Weather Floor Liner Package (2T) &middot; Tow Hitch Receiver Package (DH)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$57,973</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid Limited AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-heavy"></span>Heavy Metal &middot; Interior LC20</div>
+        <div class="u-equip">Options: Premium Paint (PC) &middot; Panoramic View Monitor (SB) &middot; Panoramic Moonroof (SR) &middot; All-Weather Floor Liner Package (2T) &middot; Cross Bar Kit (3T) &middot; Rear Hatch Cargo Lamps (43) &middot; Toyota Multimedia Screen Protector (87) &middot; Door Edge Guards (D5) &middot; Tow Hitch Receiver Package (DH)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$59,393</div>
+      </div>
+    </div>
+    <h3 class="soldgrp">Grand Highlander Hybrid Nightshade &middot; 3 sold</h3>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid Nightshade AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-pearl"></span>Wind Chill Pearl &middot; Interior LD20</div>
+        <div class="u-equip">Options: Nameplate Black Overlay (BK) &middot; Premium Paint (PC) &middot; All-Weather Floor Liner Package (2T) &middot; Mudguards (MF)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$56,708</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid Nightshade AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-cement"></span>Cement &middot; Interior LD20</div>
+        <div class="u-equip">Options: Nameplate Black Overlay (BK) &middot; Panoramic View Monitor (SB) &middot; Panoramic Moonroof (SR) &middot; All-Weather Floor Liner Package (2T) &middot; Body Side Moldings (BM) &middot; Mudguards (MF)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$58,463</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid Nightshade AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-black"></span>Midnight Black Metallic &middot; Interior LD20</div>
+        <div class="u-equip">Options: Nameplate Black Overlay (BK) &middot; Panoramic View Monitor (SB) &middot; Panoramic Moonroof (SR) &middot; All-Weather Floor Liner Package (2T) &middot; Rear Hatch Cargo Lamps (43) &middot; Tow Hitch Receiver Package (DH)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$59,303</div>
+      </div>
+    </div>
+    <h3 class="soldgrp">Grand Highlander Hybrid MAX Platinum &middot; 5 sold</h3>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid MAX Platinum AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-pearl"></span>Wind Chill Pearl &middot; Interior LA10</div>
+        <div class="u-equip">Options: Premium Paint (PC) &middot; All-Weather Floor Liner Package (2T)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$62,633</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid MAX Platinum AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-storm"></span>Storm Cloud &middot; Interior LA40</div>
+        <div class="u-equip">Options: All-Weather Floor Liner Package (2T) &middot; Body Side Moldings (BM) &middot; Integrated Dashcam (V1)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$62,937</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid MAX Platinum AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-blueprint"></span>Blueprint &middot; Interior LA20</div>
+        <div class="u-equip">Options: All-Weather Floor Liner Package (2T) &middot; Body Side Moldings (BM) &middot; Illuminated Door Sills (G4) &middot; Illuminated Cargo Sills (J6) &middot; Mudguards (MF) &middot; Logo Side Puddle Lamp (PL)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$63,513</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid MAX Platinum AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-black"></span>Midnight Black Metallic &middot; Interior LA40</div>
+        <div class="u-equip">Options: All-Weather Floor Liner Package (2T) &middot; Blackout Emblem Overlays And Nameplate Overlay (3C) &middot; Door Edge Guards (D5) &middot; 20-in. Black Satin Wheels (FL)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$64,191</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Hybrid MAX Platinum AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-ruby"></span>Ruby Flare Pearl &middot; Interior LA20</div>
+        <div class="u-equip">Options: Premium Paint (PC) &middot; Paint Protection Film: Hood, Fenders, Mirror Backs &amp; Door Cups (3P) &middot; Cross Bar Kit (3T) &middot; Toyota Multimedia Screen Protector (87) &middot; Body Side Moldings (BM) &middot; Door Edge Guards (D5) &middot; Tow Hitch Receiver Package (DH) &middot; Illuminated Door Sills (G4) &middot; Illuminated Cargo Sills (J6) &middot; Mudguards (MF) &middot; Logo Side Puddle Lamp (PL)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$65,564</div>
+      </div>
+    </div>
+    <h3 class="soldgrp">Grand Highlander XLE &middot; 3 sold</h3>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander XLE AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-black"></span>Midnight Black Metallic &middot; Interior EA20</div>
+        <div class="u-equip">Options: All-Weather Floor Liner Package (2T)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$48,613</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander XLE AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-pearl"></span>Wind Chill Pearl &middot; Interior EA20</div>
+        <div class="u-equip">Options: Bench Seat (BS) &middot; Premium Paint (PC) &middot; All-Weather Floor Liner Package (2T)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$49,088</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander XLE AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-black"></span>Midnight Black Metallic &middot; Interior EA20</div>
+        <div class="u-equip">Options: Panoramic Moonroof (SR) &middot; All-Weather Floor Liner Package (2T)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$49,963</div>
+      </div>
+    </div>
+    <h3 class="soldgrp">Grand Highlander Limited &middot; 1 sold</h3>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Limited AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-ruby"></span>Ruby Flare Pearl &middot; Interior LC20</div>
+        <div class="u-equip">Options: Premium Paint (PC) &middot; Panoramic View Monitor (SB) &middot; All-Weather Floor Liner Package (2T)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$54,418</div>
+      </div>
+    </div>
+    <h3 class="soldgrp">Grand Highlander Platinum &middot; 2 sold</h3>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Platinum AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-heavy"></span>Heavy Metal &middot; Interior LB40</div>
+        <div class="u-equip">Options: Premium Paint (PC) &middot; All-Weather Floor Liner Package (2T) &middot; Illuminated Cargo Sills (J6)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$58,248</div>
+      </div>
+    </div>
+    <div class="unit sold">
+      <div class="u-main">
+        <div class="u-trim">Grand Highlander Platinum AWD <span class="badge badge-sold">SOLD</span></div>
+        <div class="u-color"><span class="swatch sw-pearl"></span>Wind Chill Pearl &middot; Interior LB10</div>
+        <div class="u-equip">Options: Premium Paint (PC) &middot; All-Weather Floor Liner Package (2T) &middot; Blackout Emblem Overlays And Nameplate Overlay (3C) &middot; Door Edge Guards (D5) &middot; 20-in. Black Satin Wheels (FL) &middot; Illuminated Cargo Sills (J6) &middot; Mudguards (MF) &middot; Logo Side Puddle Lamp (PL)</div>
+        
+      </div>
+      <div class="u-right">
+        <div class="u-price">$60,606</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="note">
+    <p><strong>This sheet is a snapshot in time and is subject to change at any moment.</strong> Availability changes daily and allocated vehicles are scheduled for production and can be claimed before they are built. A unit is not held until Josh confirms it is still open and a deposit is placed. Sold units are shown for reference only. Ask us for the full equipment breakdown on any vehicle. If the Grand Highlander you want isn&rsquo;t listed, we can place a factory order and match you against the next allocation.</p>
   </div>
-</section>
 
-<!-- COLORS -->
-<section id="colors">
-  <h2>Colors by trim</h2>
-  <p class="lead">Exterior paint and interior combinations Toyota builds for 2026. Wind Chill Pearl, Ruby Flare Pearl and Heavy Metal are extra-cost colors.</p>
-  <div class="grid g2" id="colorcards"></div>
-</section>
+  </div><!-- /sheet-content -->
 
-<!-- OPTIONS -->
-<section id="options">
-  <h2>Factory options</h2>
-  <p class="lead">These are the only factory-installed options for 2026. Everything else is decided by the trim.</p>
-  <div class="tablewrap"><table style="min-width:700px">
-    <tr><th>Option (code)</th><th>What it is</th><th>Offered on</th></tr>
-    <tr><td><b>Panoramic Moonroof (SR)</b></td><td>Power tilt/slide panoramic roof with power sunshade</td><td>XLE, Hybrid XLE, Limited, Hybrid Limited, Hybrid MAX Limited, Hybrid Nightshade — standard on Platinum and Hybrid MAX Platinum</td></tr>
-    <tr><td><b>Panoramic View Monitor (SB)</b></td><td>360-degree Overhead View in low-speed drive and reverse, and Curb View</td><td>Limited, Hybrid Limited, Hybrid MAX Limited, Hybrid Nightshade — standard on Platinum and Hybrid MAX Platinum; not offered on XLE</td></tr>
-    <tr><td><b>Bench Seat (BS)</b></td><td>8-passenger second-row bench in place of captain's chairs</td><td>XLE, Hybrid XLE, Limited, Hybrid Limited</td></tr>
-  </table></div>
-  <p class="disc" style="margin-top:10px">Platinum and Hybrid MAX Platinum have no factory options — the moonroof and Panoramic View Monitor are already standard. LE and Hybrid LE have no factory options.</p>
-</section>
+  <footer>
+    <div class="f-name">Josh Hicks &middot; Sales Consultant</div>
+    <div class="f-line">McGrath Toyota of Iowa City &middot; 1445 Highway 1 West, Iowa City, IA 52246</div>
+    <div class="f-line">Call or text <a href="tel:3196311461">319-631-1461</a></div>
+  </footer>
 
-<!-- SPECS -->
-<section id="specs">
-  <h2>Specifications</h2>
-  <div class="tablewrap"><table id="specs-t" style="min-width:1000px"></table></div>
-</section>
-
-
-<!-- INVENTORY -->
-<section id="inventory">
-  <h2>Current 2026 Grand Highlander inventory</h2>
-  <p class="lead">Every 2026 Grand Highlander on our books right now — in stock, in transit, or scheduled for production. Green cards marked <b style="color:#7dffb0">Available</b> are open. Red cards marked <b style="color:#ff8a94">Sold</b> are already spoken for, but they show what's been moving so you can spec-match against the next allocation.</p>
-  <div id="invroot"></div>
-  <div class="note"><b>Snapshot in time.</b> Inventory is accurate as of September 10, 2026 and changes daily. Unit prices are MSRP as built (Total SRP); trim information above is unpriced. A unit is not held until Josh confirms it is still open and a deposit is placed. Scheduled-for-production units carry a temporary VIN until built.</div>
-</section>
-
-<!-- DISCLAIMERS -->
-<section id="disclaimers">
-  <h2>Disclaimers</h2>
-  <div class="disc">
-    <p>Information is taken from the Toyota 2026 Grand Highlander Sourcebook and is believed accurate as of the date below. Toyota can change specifications, features, colors and availability at any time without notice; confirm the equipment on any specific vehicle before purchase. This guide shows no pricing.</p>
-    <p>EPA-estimated 21 city/28 highway/24 combined mpg rating for 2026 Grand Highlander LE FWD, XLE FWD and Limited FWD; 21 city/27 highway/23 combined for Hybrid LE AWD and XLE AWD; 20 city/26 highway/22 combined for Limited AWD and Platinum AWD; 37 city/34 highway/36 combined for Hybrid XLE FWD; 36 city/32 highway/34 combined for Hybrid LE AWD, Hybrid XLE AWD, Hybrid Limited AWD and Hybrid Nightshade Edition; 26 city/27 highway/27 combined for Hybrid MAX Limited AWD and Hybrid MAX Platinum AWD. Use for comparison purposes only. Your mileage will vary for many reasons, including your vehicle's condition and how/where you drive. See www.fueleconomy.gov.</p>
-    <p>Never tow beyond a vehicle's published towing capacities. Do not overload your vehicle. See Owner's Manual for weight limits and restrictions. Toyota Safety Sense™ effectiveness is dependent on many factors including road, weather and vehicle conditions; drivers are responsible for their own safe driving. Do not rely exclusively on Blind Spot Monitor, Rear Cross-Traffic Alert, Safe Exit Alert or the Panoramic View Monitor. Traffic Jam Assist is not an automated driving system, requires driver supervision at all times, is designed to function on controlled access freeways at speeds of 25 mph or less, and requires an active Drive Connect trial or subscription. Digital Key requires an active Remote Connect subscription and Bluetooth® connectivity. Connected Services depend on 4G network availability, a cellular connection and GPS signal; subscription required after trial. Wireless charging may not be compatible with all mobile phones. 120V outlets rated for 1500 watts shared between both outlets. Apple CarPlay® is a registered trademark of Apple Inc.; Android Auto™ is a trademark of Google LLC; JBL® is a registered trademark of Harman International Industries, Inc.; Ultrasuede® is a registered trademark of Toray Industries, Inc.; HomeLink® is a registered trademark of Gentex Corporation.</p>
-    <p>Guide dated September 10, 2026.</p>
-  </div>
-</section>
 </div>
-
-<footer>
-  <div class="wrap">
-    <div>
-      <b>Josh Hicks</b> · Sales Consultant
-      <p>McGrath Toyota of Iowa City · 1445 Highway 1 West, Iowa City, IA 52246</p>
-      <p>Direct 319-631-1461</p>
-    </div>
-    <a class="cta" href="sms:+13196311461?&body=Hi%20Josh%2C%20I%20looked%20over%20the%202026%20Grand%20Highlander%20guide%20and%20have%20a%20question%20about%20">Text Josh</a>
-  </div>
-</footer>
-
 <script>
-// ---------- DATA (source: Toyota 2026 Grand Highlander Sourcebook) ----------
-const PT = {
-  hybrid:{name:"2.5L Hybrid",hp:"245 hp",tq:"175 lb.-ft.",trans:"ECVT",awd:"Electronic On-Demand AWD",tow:"3,500 lb.",mpg:"36 / 32 / 34"},
-  max:{name:"Hybrid MAX",hp:"362 hp",tq:"400 lb.-ft.",trans:"6-speed automatic",awd:"Full-Time Electronic AWD",tow:"5,000 lb.",mpg:"26 / 27 / 27"},
-  gas:{name:"2.4L Turbo",hp:"265 hp",tq:"310 lb.-ft.",trans:"8-speed automatic",awd:"Dynamic Torque Control AWD",tow:"5,000 lb.",mpg:"21 / 27 / 23"}
-};
-const TRIMS = [
- {id:"xle",name:"XLE",pts:{hybrid:{codes:"Hybrid XLE (FWD) 6716 · Hybrid XLE (AWD) 6722",mpg:"37 / 34 / 36 FWD · 36 / 32 / 34 AWD"},gas:{codes:"XLE (FWD) 6702 · XLE (AWD) 6708",mpg:"21 / 28 / 24 FWD · 21 / 27 / 23 AWD"}},
-  seats:"7 standard · 8-passenger bench optional",
-  adds:["18-in. multi-spoke silver wheels","SofTex®-trimmed front-, second- and third-row seats; heated front seats","Leather-trimmed tilt/telescopic steering wheel","Combination meter with analog gauges and 7-in. color Multi-Information Display","Auto-dimming rearview mirror with HomeLink® universal garage door opener","Height-adjustable power liftgate with jam protection","Heated power outside mirrors with blind spot warning indicators","6-speaker audio system","Silver-painted roof rails; color-keyed outside door handles","Available: Panoramic Moonroof, Bench Seat"]},
- {id:"limited",name:"Limited",pts:{hybrid:{codes:"Hybrid Limited (AWD) 6724",mpg:"36 / 32 / 34"},gas:{codes:"Limited (FWD) 6704 · Limited (AWD) 6710",mpg:"21 / 28 / 24 FWD · 20 / 26 / 22 AWD"}},
-  seats:"7 standard · 8-passenger bench optional",
-  base:"Adds to XLE",
-  adds:["20-in. silver chrome metallic multi-spoke wheels","Leather-trimmed front- and second-row seats; heated and ventilated front seats; driver's-seat memory function","Heated second-row outboard seats","Leather-trimmed heated tilt/telescopic steering wheel","12.3-in. digital meter with selectable gauge display screens","11-speaker JBL® Premium Audio system including subwoofer and amplifier","Height-adjustable foot-activated power liftgate with jam protection","Front and Rear Parking Assist with Automatic Braking","Rain-sensing windshield wipers; LED Daytime Running Lights; LED fog lights","Power-folding heated outside mirrors with blind spot warning indicators","Ambient interior lighting; front doorsill metal scuff plate","Hybrid Limited: two 120V outlets (1500W shared) · Limited: one 120V auxiliary AC power outlet","Available: Panoramic Moonroof, Panoramic View Monitor, Bench Seat, gray or brown wood-patterned door trim"]},
- {id:"night",name:"Hybrid Nightshade",pts:{hybrid:{codes:"Hybrid Nightshade (AWD) 6733",mpg:"36 / 32 / 34"}},
-  seats:"7 only",
-  base:"Limited equipment with a blackout look",
-  adds:["20-in. black alloy wheels with black lug nuts","Black exterior badging; black-painted front hood trim; black-painted front grille","Black outside door handles; black-painted roof rails; black power-folding heated outside mirrors","Black rear spoiler with long LED center high-mount stop light; black front and rear lower bumpers","Black Leather-trimmed front- and second-row seats; heated and ventilated front seats; heated second-row outboard seats","Silver-painted dashboard trim and matte-gray metallic door trim","Leather-trimmed heated tilt/telescopic steering wheel; 12.3-in. digital meter; 11-speaker JBL®","Two 120V outlets (1500W shared)","Colors: Cement, Wind Chill Pearl, Midnight Black Metallic","Available: Panoramic Moonroof, Panoramic View Monitor"]},
- {id:"maxlimited",name:"Hybrid MAX Limited",pts:{max:{codes:"Hybrid MAX Limited (AWD) 6730",mpg:"26 / 27 / 27"}},
-  seats:"7 only",
-  base:"Adds to Limited",
-  adds:["Hybrid MAX powertrain — 362 net combined hp, 400 lb.-ft.; Full-Time Electronic All-Wheel Drive; 6-speed automatic","20-in. two-tone multi-spoke machined-and-black wheels; dual exhaust","Leather-trimmed with Ultrasuede® front- and second-row seats; heated and ventilated front seats; heated second-row outboard seats","Leather-trimmed heated tilt/telescopic steering wheel with paddle shifters","Bronze-colored dashboard trim and black geometric-pattern door trim","Gunmetal-gray front grille; silver-painted front lower bumper chin spoiler and rear lower bumper","Multi-Terrain Select (MUD & SAND, ROCK & DIRT, NORMAL); Drive Mode Select with Snow Mode","Two 120V outlets (1500W shared)","Available: Panoramic Moonroof, Panoramic View Monitor"]},
- {id:"platinum",name:"Platinum",pts:{gas:{codes:"Platinum (AWD) 6712",mpg:"20 / 26 / 22"}},
-  seats:"7 only",
-  base:"Adds to Limited",
-  adds:["Standard all-wheel drive with Multi-Terrain Select","Power tilt/slide panoramic roof with power sunshade","Heated and ventilated second-row outboard seats","10-in. color Head-Up Display (HUD) with speedometer, Road Sign Assist and navigation","Digital rearview mirror with HomeLink® universal transceiver","Panoramic View Monitor with 360-degree Overhead View and Curb View","Traffic Jam Assist (active Drive Connect trial or subscription required)","User Profile Face Identification (driver monitor camera)","Leather-trimmed heated tilt/telescopic steering wheel with paddle shifters","20-in. silver multi-spoke wheels; LED rear hatch cargo illumination","Leather in Black, Light Gray or Portobello","No factory options — fully equipped"]},
- {id:"maxplat",name:"Hybrid MAX Platinum",pts:{max:{codes:"Hybrid MAX Platinum (AWD) 6732",mpg:"26 / 27 / 27"}},
-  seats:"7 only",
-  base:"Everything on Platinum, with Hybrid MAX",
-  adds:["Hybrid MAX powertrain — 362 net combined hp, 400 lb.-ft.; Full-Time Electronic All-Wheel Drive; 6-speed automatic with paddle shifters","20-in. two-tone multi-spoke silver-and-black wheels; dual exhaust","Leather-trimmed with Ultrasuede® front- and second-row seats in Black, Light Gray or Portobello; heated and ventilated front and second-row outboard seats","Bronze-colored dashboard trim and black geometric-pattern door trim","Panoramic roof, 10-in. Head-Up Display, digital rearview mirror, Panoramic View Monitor, Traffic Jam Assist, User Profile Face Identification — all standard","Two 120V outlets (1500W shared); LED rear hatch cargo illumination","Gunmetal-gray front grille; silver-painted front chin spoiler and rear lower bumper","No factory options — fully equipped"]}
-];
-
-// Matrix columns: xle, limited, night, maxlimited, platinum, maxplat
-// Values: "S","O","N" or text
-const MATRIX = [
- ["Exterior"],
- ["Wheels","18-in. multi-spoke silver","20-in. silver chrome metallic multi-spoke","20-in. black alloy with black lug nuts","20-in. two-tone multi-spoke machined-and-black","20-in. silver multi-spoke","20-in. two-tone multi-spoke silver-and-black"],
- ["Height-adjustable foot-activated power liftgate with jam protection","N|Power liftgate (not foot-activated)","S","S","S","S","S"],
- ["Power-folding heated outside mirrors with blind spot warning indicators","N|Heated, not power-folding","S","S|Black","S","S","S"],
- ["Rain-sensing washer-linked windshield wipers","N","S","S","S","S","S"],
- ["LED Daytime Running Lights","N|DRL (non-LED)","S","S","S","S","S"],
- ["LED fog lights","N","S","S","S","S","S"],
- ["Dual exhaust","N","N","N","S","N","S"],
- ["Front grille","Black-painted","Black-painted","Black-painted","Gunmetal-gray","Black-painted","Gunmetal-gray"],
- ["Roof rails","Silver-painted","Silver-painted","Black-painted","Silver-painted","Silver-painted","Silver-painted"],
- ["Outside door handles","Color-keyed","Color-keyed","Black","Color-keyed","Color-keyed","Color-keyed"],
- ["Black exterior badging on rear liftgate; black-painted front hood trim","N","N","S","N","N","N"],
- ["Interior"],
- ["Seating material","SofTex®","Leather","Black Leather","Leather with Ultrasuede®","Leather","Leather with Ultrasuede®"],
- ["Heated and ventilated front seats","N|Heated only","S","S","S","S","S"],
- ["Driver's-seat memory function","N","S","S","S","S","S"],
- ["Heated second-row outboard seats","N","S","S","S","S|Heated and ventilated","S|Heated and ventilated"],
- ["Heated and ventilated second-row outboard seats","N","N","N","N","S","S"],
- ["8-passenger seating (second-row bench)","O","O","N","N","N","N"],
- ["Power tilt/slide panoramic roof with power sunshade","O","O","O","O","S","S"],
- ["Leather-trimmed heated tilt/telescopic steering wheel","N|Leather, not heated","S","S","S|With paddle shifters","S|With paddle shifters","S|With paddle shifters"],
- ["12.3-in. digital meter with selectable gauge display screens","N|7-in. MID with analog gauges","S","S","S","S","S"],
- ["10-in. color Head-Up Display (HUD)","N","N","N","N","S","S"],
- ["Rearview mirror","Auto-dimming with HomeLink®","Auto-dimming with HomeLink®","Auto-dimming with HomeLink®","Auto-dimming with HomeLink®","Digital rearview mirror with HomeLink®","Digital rearview mirror with HomeLink®"],
- ["11-speaker JBL® Premium Audio system including subwoofer and amplifier","N|6-speaker audio","S","S","S","S","S"],
- ["Ambient interior lighting","N","S","S","S","S","S"],
- ["LED rear hatch cargo illumination","N","N","N","N","S","S"],
- ["Front doorsill metal scuff plate","N","S","S","S","S","S"],
- ["Dashboard and door trim","Silver-painted dash, matte-gray metallic door trim","Silver-painted dash; gray or brown wood-patterned door trim (optional)","Silver-painted dash, matte-gray metallic door trim","Bronze-colored dash, black geometric-pattern door trim","Silver-painted dash; gray or brown wood-patterned door trim (optional)","Bronze-colored dash, black geometric-pattern door trim"],
- ["120V AC power outlets","N","S|Hybrid: two outlets (1500W shared) · Gas: one outlet","S|Two outlets (1500W shared)","S|Two outlets (1500W shared)","S|One outlet","S|Two outlets (1500W shared)"],
- ["Safety & driver assistance"],
- ["Front and Rear Parking Assist with Automatic Braking","N","S","S","S","S","S"],
- ["Panoramic View Monitor with 360-degree Overhead View and Curb View","N","O","O","O","S","S"],
- ["Traffic Jam Assist","N","N","N","N","S","S"],
- ["User Profile Face Identification","N","N","N","N","S","S"],
- ["Downhill Assist Control","S|AWD only","S|AWD only","S","S","S","S"],
- ["Multi-Terrain Select","N","N","N","S","S","S"],
- ["Predictive Fuel-Efficient Drive","S|Hybrid only","S|Hybrid only","S","S","N","S"],
- ["Powertrain availability"],
- ["<span class=\"dot\" style=\"background:var(--hy)\"></span>2.5L Hybrid (245 hp · ECVT · Electronic On-Demand AWD)","S","S","S","N","N","N"],
- ["<span class=\"dot\" style=\"background:var(--mx)\"></span>Hybrid MAX (362 hp · 6-speed · Full-Time Electronic AWD)","N","N","N","S","N","S"],
- ["<span class=\"dot\" style=\"background:var(--gs)\"></span>2.4L Turbo gas (265 hp · 8-speed)","S","S","N","N","S","N"],
- ["Seating capacity","7 or 8","7 or 8","7","7","7","7"]
-];
-const COLS = [
- {id:"xle",name:"XLE",sub:"Gas or Hybrid",pts:"hybrid gas"},
- {id:"limited",name:"Limited",sub:"Gas or Hybrid",pts:"hybrid gas"},
- {id:"night",name:"Hybrid Nightshade",sub:"Hybrid only",pts:"hybrid"},
- {id:"maxlimited",name:"Hybrid MAX Limited",sub:"Hybrid MAX only",pts:"max"},
- {id:"platinum",name:"Platinum",sub:"Gas only",pts:"gas"},
- {id:"maxplat",name:"Hybrid MAX Platinum",sub:"Hybrid MAX only",pts:"max"}
-];
-
-const SWATCH = {"Celestial Silver Metallic":"#b8bcc2","Storm Cloud":"#6d7378","Wind Chill Pearl":"#f1f2f0","Ruby Flare Pearl":"#8e1220","Midnight Black Metallic":"#0d0d0f","Blueprint":"#1f3c6e","Heavy Metal":"#4a4d52","Cement":"#9c9a94"};
-const COLORS = [
- {name:"XLE · Hybrid XLE",ext:["Celestial Silver Metallic","Storm Cloud","Wind Chill Pearl","Ruby Flare Pearl","Midnight Black Metallic","Blueprint"],int:"Black SofTex® (EA20) or Light Gray SofTex® (EA10)"},
- {name:"Limited · Hybrid Limited",ext:["Heavy Metal","Storm Cloud","Wind Chill Pearl","Ruby Flare Pearl","Midnight Black Metallic","Blueprint"],int:"Black Leather (LC20) or Light Gray Leather (LC10)"},
- {name:"Hybrid Nightshade",ext:["Cement","Wind Chill Pearl","Midnight Black Metallic"],int:"Black Leather (LD20)"},
- {name:"Hybrid MAX Limited",ext:["Heavy Metal","Cement","Storm Cloud","Wind Chill Pearl","Ruby Flare Pearl","Midnight Black Metallic","Blueprint"],int:"Black Leather and Ultrasuede® (LA20) or Light Gray Leather and Ultrasuede® (LA10)"},
- {name:"Platinum",ext:["Heavy Metal","Storm Cloud","Wind Chill Pearl","Ruby Flare Pearl","Midnight Black Metallic","Blueprint"],int:"Black Leather (LB20), Light Gray Leather (LB10) or Portobello Leather (LB40)"},
- {name:"Hybrid MAX Platinum",ext:["Heavy Metal","Cement","Storm Cloud","Wind Chill Pearl","Ruby Flare Pearl","Midnight Black Metallic","Blueprint"],int:"Black (LA20), Light Gray (LA10) or Portobello (LA40) Leather and Ultrasuede®"}
-];
-
-const SPECS = [
- ["", "Hybrid XLE AWD|hybrid","Hybrid Limited AWD|hybrid","Hybrid Nightshade AWD|hybrid","Hybrid MAX Limited AWD|max","Platinum AWD|gas","Hybrid MAX Platinum AWD|max"],
- ["Engine","2.5L 4-cyl. hybrid","2.5L 4-cyl. hybrid","2.5L 4-cyl. hybrid","2.4L turbo Hybrid MAX","2.4L turbo gas","2.4L turbo Hybrid MAX"],
- ["Horsepower","245 net combined","245 net combined","245 net combined","362 net combined","265","362 net combined"],
- ["Torque","175 lb.-ft. at 4400 rpm","175 lb.-ft. at 4400 rpm","175 lb.-ft. at 4400 rpm","400 lb.-ft. at 2000–3000 rpm","310 lb.-ft. at 1700–3600 rpm","400 lb.-ft. at 2000–3000 rpm"],
- ["Transmission","ECVT","ECVT","ECVT","Direct Shift-6AT","Direct Shift-8AT","Direct Shift-6AT"],
- ["All-wheel drive","Electronic On-Demand","Electronic On-Demand","Electronic On-Demand","Full-Time Electronic","Dynamic Torque Control","Full-Time Electronic"],
- ["EPA-est. mpg city/hwy/comb.","36 / 32 / 34","36 / 32 / 34","36 / 32 / 34","26 / 27 / 27","20 / 26 / 22","26 / 27 / 27"],
- ["Fuel tank","17.17 gal.","17.17 gal.","17.17 gal.","17.17 gal.","17.83 gal.","17.17 gal."],
- ["Maximum towing capacity","3,500 lb.","3,500 lb.","3,500 lb.","5,000 lb.","5,000 lb.","5,000 lb."],
- ["Maximum tongue weight","350 lb.","350 lb.","350 lb.","500 lb.","500 lb.","500 lb."],
- ["Drive Mode Select","Sport, Eco, Normal, EV, Trail","Sport, Eco, Normal, EV, Trail","Sport, Eco, Normal, EV, Trail","Sport, Eco, Normal, Snow + Multi-Terrain Select","Sport, Eco, Normal, Snow + Multi-Terrain Select","Sport, Eco, Normal, Snow + Multi-Terrain Select"],
- ["Curb weight","4,565 lb. (7-pass.) / 4,585 lb. (8-pass.)","4,620 lb. (7-pass.) / 4,640 lb. (8-pass.)","4,620 lb.","4,830 lb.","4,440 lb.","4,905 lb."],
- ["Wheels","18-in.","20-in.","20-in.","20-in.","20-in.","20-in."],
- ["Brakes","Power-assisted, ventilated 13.3-in. front and 13.3-in. rear disc","Same","Same","Same","Same","Same"],
- ["Length / width / height","201.4 / 78.3 / 72.1 in.","Same","Same","Same","Same","Same"],
- ["Wheelbase","116.1 in.","Same","Same","Same","Same","Same"],
- ["Ground clearance","8 in.","Same","Same","Same","Same","Same"],
- ["Turning circle (curb-to-curb)","38.06 ft.","Same","Same","Same","Same","Same"],
- ["Cargo: seats up / behind 2nd row / behind front","20.6 / 57.9 / 97.5 cu. ft.","Same","Same","Same","Same","Same"]
-];
-
-// ---------- RENDER ----------
-function ptChips(t, active){
-  return Object.keys(t.pts).map(k=>`<span class="chip ${k===active?'on':''} ${Object.keys(t.pts).length===1?'static':''}" data-pt="${k}">${PT[k].name}</span>`).join('');
+if (!SHEET_LIVE) {
+  document.getElementById('sheet-content').style.display = 'none';
+  document.getElementById('offline-msg').style.display = 'block';
 }
-function ptStats(t,k){
-  const p=PT[k], v=t.pts[k];
-  return `<div class="stat">
-    <div><b>${p.hp}</b><small>${p.tq} · ${p.trans}</small></div>
-    <div><b>${v.mpg}</b><small>EPA-est. city / hwy / combined mpg</small></div>
-    <div><b>${p.tow}</b><small>maximum towing</small></div>
-    <div><b>${(k==='gas'&&(t.id==='xle'||t.id==='limited'))||(k==='hybrid'&&t.id==='xle')?'FWD or AWD':'AWD'}</b><small>${p.awd}</small></div>
-  </div><div class="pt">${v.codes}</div>`;
-}
-function renderTrims(){
-  const el=document.getElementById('trimcards');
-  el.innerHTML=TRIMS.map(t=>{
-    const first=Object.keys(t.pts)[0];
-    return `<div class="card trim" id="trim-${t.id}" data-pts="${Object.keys(t.pts).join(' ')}">
-      <span class="badge">${t.seats}</span>
-      <h3>${t.name}</h3>
-      <div class="sub">${t.base||'Where the guide starts'}</div>
-      <div class="chips">${ptChips(t,first)}</div>
-      <div class="ptbox pt-${first}">${ptStats(t,first)}</div>
-      <div class="adds"><h4>${t.base?'Adds':'Includes'}</h4><ul class="clean">${t.adds.map(a=>`<li>${a}</li>`).join('')}</ul></div>
-    </div>`;
-  }).join('');
-  el.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',e=>{
-    const card=c.closest('.trim'); const t=TRIMS.find(x=>'trim-'+x.id===card.id);
-    card.querySelectorAll('.chip').forEach(x=>x.classList.remove('on')); c.classList.add('on');
-    const pb=card.querySelector('.ptbox'); pb.className='ptbox pt-'+c.dataset.pt; pb.innerHTML=ptStats(t,c.dataset.pt);
-  }));
-}
-document.getElementById('ptfilter').addEventListener('click',e=>{
-  const b=e.target.closest('.fbtn'); if(!b)return;
-  document.querySelectorAll('#ptfilter .fbtn').forEach(x=>x.classList.remove('on')); b.classList.add('on');
-  const pt=b.dataset.pt;
-  document.querySelectorAll('.trim').forEach(card=>{
-    card.classList.toggle('dimmed', pt!=='all' && !card.dataset.pts.split(' ').includes(pt));
-    if(pt!=='all' && card.dataset.pts.split(' ').includes(pt)){
-      const chip=card.querySelector(`.chip[data-pt="${pt}"]`); if(chip && !chip.classList.contains('on')) chip.click();
-    }
-  });
-});
-
-const hidden=new Set();
-function renderMatrix(){
-  const t=document.getElementById('mtx');
-  let h='<tr><th>Feature</th>'+COLS.map(c=>`<th class="trimh ${hidden.has(c.id)?'off':''}" data-id="${c.id}" data-pts="${c.pts}">${c.name}<small>${c.pts.split(" ").map(k=>`<span class="dot" style="background:var(--${k==="hybrid"?"hy":k==="max"?"mx":"gs"})"></span>`).join("")}${c.sub}</small></th>`).join('')+'</tr>';
-  MATRIX.forEach(r=>{
-    if(r.length===1){h+=`<tr class="grp"><td colspan="${COLS.length+1}">${r[0]}</td></tr>`;return;}
-    h+=`<tr><td class="feat">${r[0]}</td>`;
-    COLS.forEach((c,i)=>{
-      if(hidden.has(c.id)){h+='<td></td>';return;}
-      const raw=r[i+1]; const [v,note]=raw.split('|');
-      if(v==='S'||v==='O'||v==='N'){h+=`<td class="c ${v}">${v==='N'?'—':v}${note?`<small style="display:block;font-weight:normal;color:var(--muted)">${note}</small>`:''}</td>`;}
-      else h+=`<td class="txt">${raw}</td>`;
-    });
-    h+='</tr>';
-  });
-  t.innerHTML=h;
-  t.querySelectorAll('th.trimh').forEach(th=>th.addEventListener('click',()=>{const id=th.dataset.id; hidden.has(id)?hidden.delete(id):hidden.add(id); renderMatrix();}));
-}
-function renderColors(){
-  document.getElementById('colorcards').innerHTML=COLORS.map(c=>`<div class="card"><h3 style="font-size:17px">${c.name}</h3><div style="margin:8px 0">${c.ext.map(e=>`<span class="sw"><i style="background:${SWATCH[e]}"></i>${e}</span>`).join('')}</div><div class="sub" style="margin:0">Interior: ${c.int}</div></div>`).join('');
-}
-function renderSpecs(){
-  document.getElementById('specs-t').innerHTML=SPECS.map((r,i)=>i===0?'<tr>'+r.map(x=>{const [n,p]=x.split('|');return p?`<th class="sh" data-pts="${p}">${n}</th>`:`<th>${n}</th>`}).join('')+'</tr>':'<tr>'+r.map((x,j)=>j===0?`<td class="feat">${x}</td>`:`<td class="txt" ${x==='Same'?'style="color:var(--dim)"':''}>${x}</td>`).join('')+'</tr>').join('');
-}
-renderTrims();renderMatrix();renderColors();renderSpecs();
-// ---------- INVENTORY (export 9/10/26) ----------
-const SHEET_LIVE = true;
-const EXT={"01J9":["Celestial Silver Metallic","#b8bcc2"],"0218":["Midnight Black Metallic","#0d0d0f"],"0089":["Wind Chill Pearl","#f1f2f0"],"03T3":["Ruby Flare Pearl","#8e1220"],"01L5":["Heavy Metal","#4a4d52"],"08X8":["Blueprint","#1f3c6e"],"01H5":["Cement","#9c9a94"],"01L6":["Storm Cloud","#6d7378"]};
-const INT={EA20:"Black SofTex®",EA10:"Light Gray SofTex®",LC20:"Black Leather",LC10:"Light Gray Leather",LD20:"Black Leather",LB10:"Light Gray Leather",LB20:"Black Leather",LB40:"Portobello Leather",LA20:"Black Leather and Ultrasuede®",LA10:"Light Gray Leather and Ultrasuede®",LA40:"Portobello Leather and Ultrasuede®"};
-const OPT={SR:"Panoramic Moonroof",SB:"Panoramic View Monitor",BS:"8-passenger Bench Seat",PC:"Premium Paint",DH:"Tow Hitch Receiver Package",'2T':"All-Weather Floor Liner Package",G4:"Illuminated Door Sills",J6:"Illuminated Cargo Sills",MF:"Mudguards",PL:"Logo Side Puddle Lamp",D5:"Door Edge Guards",'43':"Rear Hatch Cargo Lamps",'87':"Toyota Multimedia Screen Protector",WL:"Alloy Wheel Locks",'3T':"Cross Bar Kit",'3P':"Paint Protection Film: Hood, Fenders, Mirror Backs & Door Cups",BM:"Body Side Moldings",'3C':"Blackout Emblem Overlays And Nameplate Overlay",V1:"Integrated Dashcam",FL:"20-in. Black Satin Wheels",BK:"Nameplate Black Overlay",'1S':"SiriusXM® Trial Offering: 33 Months",'1Y':"Connected Services Trial Offering: 2 Additional Years of Drive Connect & Remote Connect",'59':"Quick Charging Cable Package",GN:"Cargo Net: Envelope",RB:"Running Boards",FE:null};
-const CAT={G:"In stock",FI:"In transit",A:"Scheduled for production"};
-const TRIMPT={"Hybrid XLE":"hybrid","Hybrid Limited":"hybrid","Hybrid Nightshade":"hybrid","Hybrid MAX Platinum":"max","Hybrid MAX Limited":"max","XLE":"gas","Limited":"gas","Platinum":"gas"};
-// [cat, trim, model, ext, int, vin, codes, msrp, reserved]
-const INV=[
-["G","Hybrid XLE","6716S","01J9","EA20","5TDABAA53TS007248","FE BS 2T MF",48923,"Y"],
-["G","Hybrid MAX Platinum","6732S","0218","LA20","5TDADAB52TS054537","FE 2T 87 DH MF",63353,"Y"],
-["G","Hybrid Nightshade","6733S","0089","LD20","5TDACAB5XTS125471","FE BK PC SB SR 1S 1Y 2T 3P 43 59 BM D5 G4 GN MF RB WL",62001,"Y"],
-["G","Hybrid Nightshade","6733S","0218","LD20","5TDACAB51TS126024","FE BK 2T 43 DH G4 J6 MF PL",58428,"Y"],
-["FI","Platinum","6712S","0089","LB10","5TDAAAB52TS149480","FE PC 2T 3C D5 FL J6 MF PL",60606,"Y"],
-["A","XLE","6708S","0089","EA20","5TDAAAB57TS38I544","FE BS PC 2T",49088,"Y"],
-["A","XLE","6708S","0218","EA20","5TDAAAB53TS38H536","FE 2T",48613,"Y"],
-["A","Limited","6710S","0089","LC20","5TDAAAB57TS38G275","FE PC SB SR 2T",55768,"N"],
-["A","Limited","6710S","03T3","LC20","5TDAAAB58TS37F317","FE PC SB 2T",54418,"Y"],
-["A","Platinum","6712S","01L5","LB40","5TDAAAB55TS39F248","FE PC 2T J6",58248,"Y"],
-["A","Platinum","6712S","0218","LB10","5TDAAAB58TS39F714","FE 2T G4 MF",57983,"N"],
-["A","Platinum","6712S","03T3","LB20","5TDAAAB52TS38H947","FE PC 2T",57903,"N"],
-["A","Hybrid XLE","6716S","0218","EA10","5TDABAA59TS40G153","FE 2T",48763,"N"],
-["A","Hybrid XLE","6722S","0089","EA10","5TDACAB51TS37F380","FE PC 2T",50838,"Y"],
-["A","Hybrid XLE","6722S","01J9","EA10","5TDACAB58TS36E442","FE SR 2T",51713,"Y"],
-["A","Hybrid Limited","6724S","0089","LC10","5TDACAB52TS41G325","FE BS PC SB 2T 3T 43 DH",57773,"Y"],
-["A","Hybrid Limited","6724S","01L5","LC20","5TDACAB52TS38G937","FE PC SB SR 2T",57518,"Y"],
-["A","Hybrid Limited","6724S","01L5","LC20","5TDACAB56TS38I156","FE PC SB SR 2T 3T 43 87 D5 DH",59393,"Y"],
-["A","Hybrid Limited","6724S","0218","LC10","5TDACAB53TS38G560","FE SB 2T BM D5 MF",56298,"Y"],
-["A","Hybrid Limited","6724S","0218","LC20","5TDACAB54TS39H065","FE SR 2T DH",57373,"N"],
-["A","Hybrid Limited","6724S","08X8","LC20","5TDACAB54TS38H216","FE SB 3C 43 MF V1",56582,"Y"],
-["A","Hybrid MAX Platinum","6732S","0218","LA40","5TDADAB53TS40F802","FE 2T 3C D5 FL",64191,"Y"],
-["A","Hybrid MAX Platinum","6732S","03T3","LA20","5TDADAB55TS41G123","FE PC 3P 3T 87 BM D5 DH G4 J6 MF PL",65564,"Y"],
-["A","Hybrid Nightshade","6733S","0089","LD20","5TDACAB56TS39G662","FE BK PC 2T MF",56708,"Y"],
-["A","Hybrid Nightshade","6733S","01H5","LD20","5TDACAB57TS31I858","FE BK SB SR 2T BM MF",58463,"Y"],
-["A","Hybrid Nightshade","6733S","0218","LD20","5TDACAB5XTS39H331","FE BK SB SR 2T 43 DH",59303,"Y"]
-];
-function drive(model){return model.startsWith("6716")?"FWD":"AWD";}
-function isTempVin(v){return /[A-Z]/.test(v.slice(11,14)) && /\d[A-Z]\d{3}$/.test(v);}
-function codesText(codes){
-  const known=[],raw=[];
-  codes.split(/\s+/).forEach(c=>{ if(c in OPT){ if(OPT[c]) known.push(OPT[c]); } else raw.push(c); });
-  let t=known.join(", "); if(raw.length) t+=(t?"; ":"")+"additional accessories ("+raw.join(" ")+")"; return t;
-}
-function unitCard(u,avail){
-  const [cat,trim,model,ext,int_,vin,codes,msrp,res]=u; const e=EXT[ext]||[ext,"#666"]; const pt=TRIMPT[trim];
-  const name=`2026 Grand Highlander ${trim} ${drive(model)}`;
-  const temp=isTempVin(vin);
-  const sms=`sms:+13196311461?&body=${encodeURIComponent(`Hi Josh, I'd like to reserve the ${name} in ${e[0]}, MSRP $${msrp.toLocaleString()}, VIN ${vin}.`)}`;
-  return `<div class="unit ${avail?'avail':'sold'}" style="--pc:var(--${pt==='hybrid'?'hy':pt==='max'?'mx':'gs'})">
-    <span class="${avail?'badge-av':'badge-sold'}">${avail?'AVAILABLE':'SOLD'}</span>
-    <span class="ptchip">${PT[pt].name}</span>
-    <h3>${name}</h3>
-    <div class="line"><span class="sw"><i style="background:${e[1]}"></i>${e[0]}</span> · ${INT[int_]||int_} interior</div>
-    <div class="price">$${msrp.toLocaleString()}<small>MSRP as built</small></div>
-    <div class="line"><b>Status</b>${CAT[cat]||cat}${cat==='A'?' · '+(temp?'Temp VIN':'VIN'):''}</div>
-    ${avail?`<div class="line"><b>VIN</b>${vin}</div>`:''}
-    <div class="line"><b>Equipment</b>${codesText(codes)}</div>
-    ${avail?`<a class="reserve" href="${sms}">Reserve — Text Josh</a><div class="line" style="margin-top:6px"><a href="#trim-${trim.includes('Platinum')?(pt==='max'?'maxplat':'platinum'):trim.includes('Nightshade')?'night':trim.includes('MAX')?'maxlimited':trim.includes('Limited')?'limited':'xle'}" style="color:var(--muted);font-size:12px">See what this trim includes ↑</a></div>`:''}
-  </div>`;
-}
-function renderInventory(){
-  const root=document.getElementById('invroot');
-  if(!SHEET_LIVE){root.innerHTML="<div class=\"note\">Inventory is temporarily offline. Call or text Josh at 319-631-1461 for what is open right now.</div>";return;}
-  const isOpen=u=>u[8]==='N' && !u[2].startsWith('6724'); // every Hybrid Limited (6724) is spoken for
-  const av=INV.filter(isOpen), sold=INV.filter(u=>!isOpen(u));
-  const order={G:0,FI:1,A:2};
-  av.sort((a,b)=>order[a[0]]-order[b[0]]||a[7]-b[7]); sold.sort((a,b)=>a[1].localeCompare(b[1])||a[7]-b[7]);
-  root.innerHTML=`<div class="inv-sub" style="color:#7dffb0">Available now<span>${av.length} unit${av.length===1?'':'s'} open</span></div><div class="inv-grid">${av.map(u=>unitCard(u,true)).join('')}</div>
-  <div class="inv-sub" style="color:#ff8a94">Sold<span>${sold.length} units spoken for — shown for reference</span></div><div class="inv-grid">${sold.map(u=>unitCard(u,false)).join('')}</div>`;
-}
-renderInventory();
-
 </script>
 </body>
 </html>
