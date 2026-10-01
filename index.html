@@ -143,15 +143,15 @@ th.trimh[data-pts="hybrid gas"]{box-shadow:none;background:linear-gradient(90deg
 .cbtn{font:bold 13px Arial,Helvetica,sans-serif;padding:8px 14px;border-radius:8px;border:1.5px solid var(--pc);color:var(--pc);background:transparent;cursor:pointer;transition:box-shadow .15s,background .15s}
 .cbtn.on{background:var(--grad);color:#fff;box-shadow:0 0 10px var(--glow);text-shadow:0 1px 2px rgba(0,0,0,.6)}
 .cbtn:disabled{opacity:.28;cursor:not-allowed;text-decoration:line-through}
-.psbtn:focus-visible,.cbtn:focus-visible,.cmp .x:focus-visible,#cmpreset:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.psbtn:focus-visible,.cbtn:focus-visible,.cmp .x:focus-visible,.cmp-reset:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .cmp-meta{display:flex;gap:14px;align-items:center;font-size:13px;color:var(--muted);margin:2px 0 4px;min-height:28px}
-#cmpreset{background:none;border:1px solid var(--line);color:#fff;border-radius:999px;padding:4px 12px;font:13px Arial,Helvetica,sans-serif;cursor:pointer}
-#cmpreset:hover{border-color:#fff}
+.cmp-reset{background:none;border:1px solid var(--line);color:#fff;border-radius:999px;padding:4px 12px;font:13px Arial,Helvetica,sans-serif;cursor:pointer}
+.cmp-reset:hover{border-color:#fff}
 .tbl-scroll{overflow:auto;max-height:78vh;border:1px solid var(--line);border-radius:12px;background:var(--panel);overscroll-behavior:contain}
 table.cmp{width:100%}
 .cmp th{position:sticky;top:0;z-index:3}
 .cmp th.fh{left:0;z-index:5;background:#101014;vertical-align:bottom;min-width:240px}
-.cmp th.trimbox{background:var(--grad);color:#fff;text-align:center;vertical-align:bottom;padding:14px 30px 10px;border-left:2px solid var(--bg);border-bottom:3px solid var(--pc);min-width:150px;text-shadow:0 1px 2px rgba(0,0,0,.7)}
+.cmp th.trimbox{background:var(--grad);color:#fff;text-align:center;vertical-align:bottom;padding:34px 12px 10px;border-left:2px solid var(--bg);border-bottom:3px solid var(--pc);min-width:150px;text-shadow:0 1px 2px rgba(0,0,0,.7)}
 .cmp th.trimbox .nm{display:block;font-size:15px;line-height:1.2}
 .cmp th.trimbox .ps{display:block;font-size:11px;font-weight:normal;margin-top:4px;color:rgba(255,255,255,.88)}
 .cmp .x{position:absolute;top:6px;right:6px;width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.5);color:#fff;cursor:pointer;font-size:15px;line-height:20px;padding:0}
@@ -162,7 +162,7 @@ table.cmp{width:100%}
 .cmp tbody tr:hover td,.cmp tbody tr:hover td.feat{background:#202028}
 .cmp tbody tr.grp td,.cmp tbody tr.grp:hover td{background:#101014 !important;color:var(--red);font-weight:bold;letter-spacing:1px;font-size:12px;text-transform:uppercase}
 .cmp td.empty{color:var(--muted);text-transform:none;letter-spacing:0}
-@media(max-width:600px){.cmp th.fh,.cmp td.feat{min-width:150px;max-width:170px;font-size:12px}.cmp th.trimbox{min-width:130px;padding:14px 26px 10px}}
+@media(max-width:600px){.cmp th.fh,.cmp td.feat{min-width:150px;max-width:170px;font-size:12px}.cmp th.trimbox{min-width:130px;padding:32px 10px 10px}}
 @media print{.cmp-bar,.cmp-meta,.cmp .x{display:none !important}.tbl-scroll{max-height:none;overflow:visible}.cmp th.trimbox{-webkit-print-color-adjust:exact;print-color-adjust:exact}.cmp td.feat{position:static}}
 #trimcards[data-ps=hybrid] .trim[data-pts="hybrid gas"]:before{background:var(--hy)}
 #trimcards[data-ps=gas] .trim[data-pts="hybrid gas"]:before{background:var(--gs)}
@@ -182,6 +182,21 @@ header img{height:clamp(90px,15vw,200px);width:auto;flex:none;filter:drop-shadow
 @media(max-width:700px){header .wrap{flex-direction:column-reverse;align-items:flex-start;padding-top:28px}header img{height:56px}.hero-title .ln1{font-size:6.6vw}.byline{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.hero-title .ln{animation:none}}
 @media print{.hero-title .ln{background:none;-webkit-text-fill-color:#000;color:#000;filter:none}.byline{color:#000}}
+/* specs table extras */
+.cmp td.same{text-align:center;color:#e6e6e6}
+.cmp td.same small{display:block;color:var(--dim);font-size:11px;margin-top:3px}
+@media(max-width:700px){.cmp td.same{text-align:left}.cmp td.same .sv{display:inline-block;position:sticky;left:172px;max-width:165px}}
+.dv{display:block}.dv+.dv{margin-top:6px}
+.dv i{font-style:normal;font-size:10px;font-weight:bold;padding:1px 7px;border-radius:999px;margin-right:7px;border:1px solid;vertical-align:1px}
+.dv i.dh{color:var(--hy);border-color:var(--hy)}.dv i.dg{color:var(--gs);border-color:var(--gs)}
+.na{color:var(--dim);font-size:12px}
+/* trim card shading */
+.trim[data-pts="hybrid"]{background:linear-gradient(165deg,rgba(59,156,255,.16) 0%,var(--panel) 60%)}
+.trim[data-pts="max"]{background:linear-gradient(165deg,rgba(255,140,26,.16) 0%,var(--panel) 60%)}
+.trim[data-pts="gas"]{background:linear-gradient(165deg,rgba(176,182,189,.13) 0%,var(--panel) 60%)}
+.trim[data-pts="hybrid gas"]{background:linear-gradient(160deg,rgba(59,156,255,.16) 0%,transparent 45%),linear-gradient(200deg,rgba(176,182,189,.13) 0%,transparent 45%),var(--panel)}
+#trimcards[data-ps=hybrid] .trim[data-pts="hybrid gas"]{background:linear-gradient(165deg,rgba(59,156,255,.16) 0%,var(--panel) 60%)}
+#trimcards[data-ps=gas] .trim[data-pts="hybrid gas"]{background:linear-gradient(165deg,rgba(176,182,189,.13) 0%,var(--panel) 60%)}
 </style>
 </head>
 <body>
@@ -297,9 +312,9 @@ header img{height:clamp(90px,15vw,200px);width:auto;flex:none;filter:drop-shadow
       <button class="psbtn" data-ps="hybrid" aria-pressed="false">Hybrid</button>
       <button class="psbtn" data-ps="gas" aria-pressed="false">Gas</button>
     </div>
-    <div class="cmp-pick" id="cmppick" role="group" aria-label="Trims to compare"></div>
+    <div class="cmp-pick" role="group" aria-label="Trims to compare"></div>
   </div>
-  <div class="cmp-meta"><span id="cmpcount"></span><button type="button" id="cmpreset">Show all trims</button></div>
+  <div class="cmp-meta"><span class="cmp-count"></span><button type="button" class="cmp-reset">Show all trims</button></div>
   <div class="legend"><span><b style="color:var(--green)">S</b> Standard</span><span><b style="color:var(--gold)">O</b> Optional (factory option)</span><span><b style="color:var(--dim)">—</b> Not offered on this trim</span><span><span class="dot" style="background:var(--hy)"></span>2.5L Hybrid</span><span><span class="dot" style="background:var(--mx)"></span>Hybrid MAX</span><span><span class="dot" style="background:var(--gs)"></span>2.4L Turbo gas</span></div>
   <div style="height:12px"></div>
   <div class="tbl-scroll"><table id="mtx" class="cmp"></table></div>
@@ -375,7 +390,19 @@ header img{height:clamp(90px,15vw,200px);width:auto;flex:none;filter:drop-shadow
 <!-- SPECS -->
 <section id="specs">
   <h2>Specifications</h2>
-  <div class="tablewrap"><table id="specs-t" style="min-width:1000px"></table></div>
+  <p class="lead">AWD figures for every trim. Choose Gas or Hybrid, then tap trims on or off to compare them side by side. When every trim you're showing shares the same figure, the row collapses to a single value.</p>
+  <div class="cmp-bar">
+    <div class="ptsel" role="group" aria-label="Powertrain">
+      <span class="t">Powertrain</span>
+      <button class="psbtn on" data-ps="all" aria-pressed="true">All</button>
+      <button class="psbtn" data-ps="hybrid" aria-pressed="false">Hybrid</button>
+      <button class="psbtn" data-ps="gas" aria-pressed="false">Gas</button>
+    </div>
+    <div class="cmp-pick" role="group" aria-label="Trims to compare"></div>
+  </div>
+  <div class="cmp-meta"><span class="cmp-count"></span><button type="button" class="cmp-reset">Show all trims</button></div>
+  <div style="height:8px"></div>
+  <div class="tbl-scroll"><table id="specs-t" class="cmp"></table></div>
 </section>
 
 
@@ -509,26 +536,235 @@ const COLORS = [
  {name:"Hybrid MAX Platinum",ext:["Heavy Metal","Cement","Storm Cloud","Wind Chill Pearl","Ruby Flare Pearl","Midnight Black Metallic","Blueprint"],int:"Black (LA20), Light Gray (LA10) or Portobello (LA40) Leather and Ultrasuede®"}
 ];
 
-const SPECS = [
- ["", "Hybrid XLE AWD|hybrid","Hybrid Limited AWD|hybrid","Hybrid Nightshade AWD|hybrid","Hybrid MAX Limited AWD|max","Platinum AWD|gas","Hybrid MAX Platinum AWD|max"],
- ["Engine","2.5L 4-cyl. hybrid","2.5L 4-cyl. hybrid","2.5L 4-cyl. hybrid","2.4L turbo Hybrid MAX","2.4L turbo gas","2.4L turbo Hybrid MAX"],
- ["Horsepower","245 net combined","245 net combined","245 net combined","362 net combined","265","362 net combined"],
- ["Torque","175 lb.-ft. at 4400 rpm","175 lb.-ft. at 4400 rpm","175 lb.-ft. at 4400 rpm","400 lb.-ft. at 2000–3000 rpm","310 lb.-ft. at 1700–3600 rpm","400 lb.-ft. at 2000–3000 rpm"],
- ["Transmission","ECVT","ECVT","ECVT","Direct Shift-6AT","Direct Shift-8AT","Direct Shift-6AT"],
- ["All-wheel drive","Electronic On-Demand","Electronic On-Demand","Electronic On-Demand","Full-Time Electronic","Dynamic Torque Control","Full-Time Electronic"],
- ["EPA-est. mpg city/hwy/comb.","36 / 32 / 34","36 / 32 / 34","36 / 32 / 34","26 / 27 / 27","20 / 26 / 22","26 / 27 / 27"],
- ["Fuel tank","17.17 gal.","17.17 gal.","17.17 gal.","17.17 gal.","17.83 gal.","17.17 gal."],
- ["Maximum towing capacity","3,500 lb.","3,500 lb.","3,500 lb.","5,000 lb.","5,000 lb.","5,000 lb."],
- ["Maximum tongue weight","350 lb.","350 lb.","350 lb.","500 lb.","500 lb.","500 lb."],
- ["Drive Mode Select","Sport, Eco, Normal, EV, Trail","Sport, Eco, Normal, EV, Trail","Sport, Eco, Normal, EV, Trail","Sport, Eco, Normal, Snow + Multi-Terrain Select","Sport, Eco, Normal, Snow + Multi-Terrain Select","Sport, Eco, Normal, Snow + Multi-Terrain Select"],
- ["Curb weight","4,565 lb. (7-pass.) / 4,585 lb. (8-pass.)","4,620 lb. (7-pass.) / 4,640 lb. (8-pass.)","4,620 lb.","4,830 lb.","4,440 lb.","4,905 lb."],
- ["Wheels","18-in.","20-in.","20-in.","20-in.","20-in.","20-in."],
- ["Brakes","Power-assisted, ventilated 13.3-in. front and 13.3-in. rear disc","Same","Same","Same","Same","Same"],
- ["Length / width / height","201.4 / 78.3 / 72.1 in.","Same","Same","Same","Same","Same"],
- ["Wheelbase","116.1 in.","Same","Same","Same","Same","Same"],
- ["Ground clearance","8 in.","Same","Same","Same","Same","Same"],
- ["Turning circle (curb-to-curb)","38.06 ft.","Same","Same","Same","Same","Same"],
- ["Cargo: seats up / behind 2nd row / behind front","20.6 / 57.9 / 97.5 cu. ft.","Same","Same","Same","Same","Same"]
+const SPEC_ROWS = [
+[
+"Engine",
+{
+"h": "2.5L 4-cyl. hybrid",
+"g": "2.4L turbo gas"
+},
+{
+"h": "2.5L 4-cyl. hybrid",
+"g": "2.4L turbo gas"
+},
+"2.5L 4-cyl. hybrid",
+"2.4L turbo Hybrid MAX",
+"2.4L turbo gas",
+"2.4L turbo Hybrid MAX"
+],
+[
+"Horsepower",
+{
+"h": "245 net combined",
+"g": "265"
+},
+{
+"h": "245 net combined",
+"g": "265"
+},
+"245 net combined",
+"362 net combined",
+"265",
+"362 net combined"
+],
+[
+"Torque",
+{
+"h": "175 lb.-ft. at 4400 rpm",
+"g": "310 lb.-ft. at 1700–3600 rpm"
+},
+{
+"h": "175 lb.-ft. at 4400 rpm",
+"g": "310 lb.-ft. at 1700–3600 rpm"
+},
+"175 lb.-ft. at 4400 rpm",
+"400 lb.-ft. at 2000–3000 rpm",
+"310 lb.-ft. at 1700–3600 rpm",
+"400 lb.-ft. at 2000–3000 rpm"
+],
+[
+"Transmission",
+{
+"h": "ECVT",
+"g": "Direct Shift-8AT"
+},
+{
+"h": "ECVT",
+"g": "Direct Shift-8AT"
+},
+"ECVT",
+"Direct Shift-6AT",
+"Direct Shift-8AT",
+"Direct Shift-6AT"
+],
+[
+"All-wheel drive",
+{
+"h": "Electronic On-Demand",
+"g": "Dynamic Torque Control"
+},
+{
+"h": "Electronic On-Demand",
+"g": "Dynamic Torque Control"
+},
+"Electronic On-Demand",
+"Full-Time Electronic",
+"Dynamic Torque Control",
+"Full-Time Electronic"
+],
+[
+"EPA-est. mpg city/hwy/comb.",
+{
+"h": "36 / 32 / 34",
+"g": "21 / 27 / 23"
+},
+{
+"h": "36 / 32 / 34",
+"g": "20 / 26 / 22"
+},
+"36 / 32 / 34",
+"26 / 27 / 27",
+"20 / 26 / 22",
+"26 / 27 / 27"
+],
+[
+"Fuel tank",
+{
+"h": "17.17 gal.",
+"g": "17.83 gal."
+},
+{
+"h": "17.17 gal.",
+"g": "17.83 gal."
+},
+"17.17 gal.",
+"17.17 gal.",
+"17.83 gal.",
+"17.17 gal."
+],
+[
+"Maximum towing capacity",
+{
+"h": "3,500 lb.",
+"g": "5,000 lb."
+},
+{
+"h": "3,500 lb.",
+"g": "5,000 lb."
+},
+"3,500 lb.",
+"5,000 lb.",
+"5,000 lb.",
+"5,000 lb."
+],
+[
+"Maximum tongue weight",
+{
+"h": "350 lb.",
+"g": "500 lb."
+},
+{
+"h": "350 lb.",
+"g": "500 lb."
+},
+"350 lb.",
+"500 lb.",
+"500 lb.",
+"500 lb."
+],
+[
+"Drive Mode Select",
+{
+"h": "Sport, Eco, Normal, EV, Trail",
+"g": "Sport, Eco, Normal, Snow"
+},
+{
+"h": "Sport, Eco, Normal, EV, Trail",
+"g": "Sport, Eco, Normal, Snow"
+},
+"Sport, Eco, Normal, EV, Trail",
+"Sport, Eco, Normal, Snow + Multi-Terrain Select",
+"Sport, Eco, Normal, Snow + Multi-Terrain Select",
+"Sport, Eco, Normal, Snow + Multi-Terrain Select"
+],
+[
+"Curb weight",
+{
+"h": "4,565 lb. (7-pass.) / 4,585 lb. (8-pass.)",
+"g": "<span class=\"na\">Not listed in this guide</span>"
+},
+{
+"h": "4,620 lb. (7-pass.) / 4,640 lb. (8-pass.)",
+"g": "<span class=\"na\">Not listed in this guide</span>"
+},
+"4,620 lb.",
+"4,830 lb.",
+"4,440 lb.",
+"4,905 lb."
+],
+[
+"Wheels",
+"18-in.",
+"20-in.",
+"20-in.",
+"20-in.",
+"20-in.",
+"20-in."
+],
+[
+"Brakes",
+"Power-assisted, ventilated 13.3-in. front and 13.3-in. rear disc",
+"Power-assisted, ventilated 13.3-in. front and 13.3-in. rear disc",
+"Power-assisted, ventilated 13.3-in. front and 13.3-in. rear disc",
+"Power-assisted, ventilated 13.3-in. front and 13.3-in. rear disc",
+"Power-assisted, ventilated 13.3-in. front and 13.3-in. rear disc",
+"Power-assisted, ventilated 13.3-in. front and 13.3-in. rear disc"
+],
+[
+"Length / width / height",
+"201.4 / 78.3 / 72.1 in.",
+"201.4 / 78.3 / 72.1 in.",
+"201.4 / 78.3 / 72.1 in.",
+"201.4 / 78.3 / 72.1 in.",
+"201.4 / 78.3 / 72.1 in.",
+"201.4 / 78.3 / 72.1 in."
+],
+[
+"Wheelbase",
+"116.1 in.",
+"116.1 in.",
+"116.1 in.",
+"116.1 in.",
+"116.1 in.",
+"116.1 in."
+],
+[
+"Ground clearance",
+"8 in.",
+"8 in.",
+"8 in.",
+"8 in.",
+"8 in.",
+"8 in."
+],
+[
+"Turning circle (curb-to-curb)",
+"38.06 ft.",
+"38.06 ft.",
+"38.06 ft.",
+"38.06 ft.",
+"38.06 ft.",
+"38.06 ft."
+],
+[
+"Cargo: seats up / behind 2nd row / behind front",
+"20.6 / 57.9 / 97.5 cu. ft.",
+"20.6 / 57.9 / 97.5 cu. ft.",
+"20.6 / 57.9 / 97.5 cu. ft.",
+"20.6 / 57.9 / 97.5 cu. ft.",
+"20.6 / 57.9 / 97.5 cu. ft.",
+"20.6 / 57.9 / 97.5 cu. ft."
+]
 ];
 
 // ---------- RENDER ----------
@@ -576,7 +812,7 @@ document.getElementById('ptfilter').addEventListener('click',e=>{
   });
 });
 
-// ---------- COMPARISON TABLE ----------
+// ---------- COMPARISON TABLES (features + specs) ----------
 // Columns that come with either powertrain show the selected powertrain's equipment.
 const PT_CELL={
  "Predictive Fuel-Efficient Drive":{xle:{hybrid:"S",gas:"N"},limited:{hybrid:"S",gas:"N"}},
@@ -590,94 +826,111 @@ const COL_PT={
  platinum:{all:{name:"Platinum",ps:"2.4L Turbo · AWD"}},
  maxplat:{all:{name:"Hybrid MAX Platinum",ps:"Hybrid MAX · AWD"}}
 };
-const cmpOn=new Set(COLS.map(c=>c.id));
-let cmpPS="all";
+const SPEC_SUB={
+ xle:{hybrid:"2.5L Hybrid · AWD",gas:"2.4L Turbo · AWD",all:"Gas or Hybrid · AWD"},
+ limited:{hybrid:"2.5L Hybrid · AWD",gas:"2.4L Turbo · AWD",all:"Gas or Hybrid · AWD"},
+ night:{all:"2.5L Hybrid · AWD"},maxlimited:{all:"Hybrid MAX · AWD"},platinum:{all:"2.4L Turbo · AWD"},maxplat:{all:"Hybrid MAX · AWD"}
+};
 function colPts(c){return c.pts.split(" ");}
-function offered(c){
-  if(cmpPS==="all")return true;
+function offered(c,ps){
+  if(ps==="all")return true;
   const p=colPts(c);
-  return cmpPS==="gas"?p.includes("gas"):(p.includes("hybrid")||p.includes("max"));
+  return ps==="gas"?p.includes("gas"):(p.includes("hybrid")||p.includes("max"));
 }
-function colKind(c){
+function colKind(c,ps){
   const p=colPts(c);
-  if(p.length>1){return cmpPS==="gas"?"gas":cmpPS==="hybrid"?"hybrid":"dual";}
+  if(p.length>1){return ps==="gas"?"gas":ps==="hybrid"?"hybrid":"dual";}
   return p[0];
 }
-function colLabel(c){const m=COL_PT[c.id];return m[cmpPS]||m.all;}
+function colLabel(c,ps,sub){
+  const m=COL_PT[c.id], l=m[ps]||m.all;
+  return sub?{name:l.name,ps:sub[c.id][ps]||sub[c.id].all}:l;
+}
 function rowPT(label){
   if(label.indexOf("2.5L Hybrid (")>-1)return "hybrid";
   if(label.indexOf("Hybrid MAX (")>-1)return "max";
   if(label.indexOf("2.4L Turbo gas")>-1)return "gas";
   return null;
 }
-function rowShown(label){
-  const k=rowPT(label); if(!k||cmpPS==="all")return true;
-  return cmpPS==="gas"?k==="gas":k!=="gas";
+function rowShown(label,ps){
+  const k=rowPT(label); if(!k||ps==="all")return true;
+  return ps==="gas"?k==="gas":k!=="gas";
 }
-function cellVal(label,c,raw){
-  const o=PT_CELL[label]&&PT_CELL[label][c.id];
-  return (o&&cmpPS!=="all"&&o[cmpPS])?o[cmpPS]:raw;
-}
-function renderPicker(){
-  const el=document.getElementById('cmppick');
-  el.innerHTML='<span class="t">Compare</span>'+COLS.map(c=>{
-    const ok=offered(c), on=ok&&cmpOn.has(c.id);
-    return `<button type="button" class="cbtn k-${colKind(c)} ${on?'on':''}" data-id="${c.id}" aria-pressed="${on}" ${ok?'':'disabled title="Not offered with this powertrain"'}>${colLabel(c).name}</button>`;
-  }).join('');
-}
-function renderMatrix(){
-  const t=document.getElementById('mtx');
-  const cols=COLS.filter(c=>offered(c)&&cmpOn.has(c.id));
-  const avail=COLS.filter(offered).length;
-  document.getElementById('cmpcount').textContent=`Comparing ${cols.length} of ${avail} trim${avail===1?'':'s'}`;
-  document.getElementById('cmpreset').hidden=cols.length===avail;
-  t.style.minWidth=cols.length?`${240+cols.length*150}px`:'0';
-  let h='<thead><tr><th class="fh">Feature</th>'+cols.map(c=>{
-    const l=colLabel(c);
-    return `<th class="trimbox k-${colKind(c)}" scope="col"><span class="nm">${l.name}</span><span class="ps">${l.ps}</span><button type="button" class="x" data-id="${c.id}" aria-label="Remove ${l.name} from the comparison">×</button></th>`;
-  }).join('')+'</tr></thead><tbody>';
-  if(!cols.length){
-    h+='<tr><td class="feat empty">Every trim is hidden. Tap a trim above to add it back.</td></tr></tbody>';
-    t.innerHTML=h; return;
-  }
-  let grp=null;
+function matrixBody(cols,ps){
+  let h='',grp=null;
   MATRIX.forEach(r=>{
     if(r.length===1){grp=r[0];return;}
-    if(!rowShown(r[0]))return;
+    if(!rowShown(r[0],ps))return;
     if(grp){h+=`<tr class="grp"><td class="feat">${grp}</td><td colspan="${cols.length}"></td></tr>`;grp=null;}
     h+=`<tr><td class="feat">${r[0]}</td>`;
     cols.forEach(c=>{
-      const raw=cellVal(r[0],c,r[COLS.indexOf(c)+1]); const [v,note]=raw.split('|');
+      const o=PT_CELL[r[0]]&&PT_CELL[r[0]][c.id];
+      const raw=(o&&ps!=="all"&&o[ps])?o[ps]:r[COLS.indexOf(c)+1];
+      const [v,note]=raw.split('|');
       if(v==='S'||v==='O'||v==='N'){h+=`<td class="c ${v}">${v==='N'?'—':v}${note?`<small style="display:block;font-weight:normal;color:var(--muted)">${note}</small>`:''}</td>`;}
       else h+=`<td class="txt">${raw}</td>`;
     });
     h+='</tr>';
   });
-  t.innerHTML=h+'</tbody>';
+  return h;
 }
-function refreshCompare(){renderPicker();renderMatrix();}
-document.querySelector('.ptsel').addEventListener('click',e=>{
-  const b=e.target.closest('.psbtn'); if(!b)return;
-  cmpPS=b.dataset.ps;
-  document.querySelectorAll('.ptsel .psbtn').forEach(x=>{const on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on);});
-  refreshCompare();
-});
-document.getElementById('cmppick').addEventListener('click',e=>{
-  const b=e.target.closest('.cbtn'); if(!b||b.disabled)return;
-  const id=b.dataset.id; cmpOn.has(id)?cmpOn.delete(id):cmpOn.add(id); refreshCompare();
-});
-document.getElementById('mtx').addEventListener('click',e=>{
-  const b=e.target.closest('.x'); if(!b)return;
-  cmpOn.delete(b.dataset.id); refreshCompare();
-});
-document.getElementById('cmpreset').addEventListener('click',()=>{COLS.forEach(c=>cmpOn.add(c.id));refreshCompare();});
+function specVal(r,c,ps){
+  const v=r[COLS.indexOf(c)+1];
+  if(typeof v==='string')return v;
+  if(ps==='hybrid')return v.h;
+  if(ps==='gas')return v.g;
+  return v.h===v.g?v.h:`<span class="dv"><i class="dh">Hybrid</i>${v.h}</span><span class="dv"><i class="dg">Gas</i>${v.g}</span>`;
+}
+function specsBody(cols,ps){
+  return SPEC_ROWS.map(r=>{
+    const vals=cols.map(c=>specVal(r,c,ps));
+    if(cols.length>1&&vals.every(v=>v===vals[0]))
+      return `<tr><td class="feat">${r[0]}</td><td class="txt same" colspan="${cols.length}"><span class="sv">${vals[0]}<small>Same on every trim shown</small></span></td></tr>`;
+    return `<tr><td class="feat">${r[0]}</td>${vals.map(v=>`<td class="txt">${v}</td>`).join('')}</tr>`;
+  }).join('');
+}
+function makeCompare(root,tableSel,body,opts){
+  const st={ps:'all',on:new Set(COLS.map(c=>c.id))};
+  const pick=root.querySelector('.cmp-pick'),cnt=root.querySelector('.cmp-count'),rst=root.querySelector('.cmp-reset'),t=root.querySelector(tableSel);
+  const lab=c=>colLabel(c,st.ps,opts.sub);
+  function refresh(){
+    pick.innerHTML='<span class="t">Compare</span>'+COLS.map(c=>{
+      const ok=offered(c,st.ps),on=ok&&st.on.has(c.id);
+      return `<button type="button" class="cbtn k-${colKind(c,st.ps)} ${on?'on':''}" data-id="${c.id}" aria-pressed="${on}" ${ok?'':'disabled title="Not offered with this powertrain"'}>${lab(c).name}</button>`;
+    }).join('');
+    const cols=COLS.filter(c=>offered(c,st.ps)&&st.on.has(c.id));
+    const avail=COLS.filter(c=>offered(c,st.ps)).length;
+    cnt.textContent=`Comparing ${cols.length} of ${avail} trim${avail===1?'':'s'}`;
+    rst.hidden=cols.length===avail;
+    t.style.minWidth=cols.length?`${240+cols.length*150}px`:'0';
+    let h=`<thead><tr><th class="fh">${opts.first||'Feature'}</th>`+cols.map(c=>{
+      const l=lab(c);
+      return `<th class="trimbox k-${colKind(c,st.ps)}" scope="col"><span class="nm">${l.name}</span><span class="ps">${l.ps}</span><button type="button" class="x" data-id="${c.id}" aria-label="Remove ${l.name} from the comparison">×</button></th>`;
+    }).join('')+'</tr></thead><tbody>';
+    h+=cols.length?body(cols,st.ps):'<tr><td class="feat empty">Every trim is hidden. Tap a trim above to add it back.</td></tr>';
+    t.innerHTML=h+'</tbody>';
+  }
+  root.querySelector('.ptsel').addEventListener('click',e=>{
+    const b=e.target.closest('.psbtn'); if(!b)return;
+    st.ps=b.dataset.ps;
+    root.querySelectorAll('.ptsel .psbtn').forEach(x=>{const on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on);});
+    refresh();
+  });
+  pick.addEventListener('click',e=>{
+    const b=e.target.closest('.cbtn'); if(!b||b.disabled)return;
+    const id=b.dataset.id; st.on.has(id)?st.on.delete(id):st.on.add(id); refresh();
+  });
+  t.addEventListener('click',e=>{const b=e.target.closest('.x'); if(!b)return; st.on.delete(b.dataset.id); refresh();});
+  rst.addEventListener('click',()=>{COLS.forEach(c=>st.on.add(c.id));refresh();});
+  return {refresh};
+}
 function renderColors(){
   document.getElementById('colorcards').innerHTML=COLORS.map(c=>`<div class="card"><h3 style="font-size:17px">${c.name}</h3><div style="margin:8px 0">${c.ext.map(e=>`<span class="sw"><i style="background:${SWATCH[e]}"></i>${e}</span>`).join('')}</div><div class="sub" style="margin:0">Interior: ${c.int}</div></div>`).join('');
 }
-function renderSpecs(){
-  document.getElementById('specs-t').innerHTML=SPECS.map((r,i)=>i===0?'<tr>'+r.map(x=>{const [n,p]=x.split('|');return p?`<th class="sh" data-pts="${p}">${n}</th>`:`<th>${n}</th>`}).join('')+'</tr>':'<tr>'+r.map((x,j)=>j===0?`<td class="feat">${x}</td>`:`<td class="txt" ${x==='Same'?'style="color:var(--dim)"':''}>${x}</td>`).join('')+'</tr>').join('');
-}
-renderTrims();refreshCompare();renderColors();renderSpecs();
+renderTrims();renderColors();
+const matrixCmp=makeCompare(document.getElementById('matrix'),'#mtx',matrixBody,{first:'Feature'});
+const specsCmp=makeCompare(document.getElementById('specs'),'#specs-t',specsBody,{first:'Specification',sub:SPEC_SUB});
+matrixCmp.refresh();specsCmp.refresh();
 // ---------- INVENTORY (export 10/1/26) ----------
 const SHEET_LIVE = true;
 const EXT={"01J9":["Celestial Silver Metallic","#b8bcc2"],"0218":["Midnight Black Metallic","#0d0d0f"],"0089":["Wind Chill Pearl","#f1f2f0"],"03T3":["Ruby Flare Pearl","#8e1220"],"01L5":["Heavy Metal","#4a4d52"],"08X8":["Blueprint","#1f3c6e"],"01H5":["Cement","#9c9a94"],"01L6":["Storm Cloud","#6d7378"]};
