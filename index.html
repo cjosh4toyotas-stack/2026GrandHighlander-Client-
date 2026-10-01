@@ -317,7 +317,7 @@ th.trimh[data-pts="hybrid gas"]{box-shadow:none;background:linear-gradient(90deg
   <h2>Current 2026 Grand Highlander inventory</h2>
   <p class="lead">Every 2026 Grand Highlander on our books right now — in stock, in transit, or scheduled for production. Green cards marked <b style="color:#7dffb0">Available</b> are open. Red cards marked <b style="color:#ff8a94">Sold</b> are already spoken for, but they show what's been moving so you can spec-match against the next allocation.</p>
   <div id="invroot"></div>
-  <div class="note"><b>Snapshot in time.</b> Inventory is accurate as of September 23, 2026 and changes daily. Unit prices are MSRP as built (Total SRP); trim information above is unpriced. A unit is not held until Josh confirms it is still open and a deposit is placed. Scheduled-for-production units carry a temporary VIN until built.</div>
+  <div class="note"><b>Snapshot in time.</b> Inventory is accurate as of October 1, 2026 and changes daily. Unit prices are MSRP as built (Total SRP); trim information above is unpriced. A unit is not held until Josh confirms it is still open and a deposit is placed. Scheduled-for-production units carry a temporary VIN until built.</div>
 </section>
 
 <!-- DISCLAIMERS -->
@@ -327,7 +327,7 @@ th.trimh[data-pts="hybrid gas"]{box-shadow:none;background:linear-gradient(90deg
     <p>Information is taken from the Toyota 2026 Grand Highlander Sourcebook and is believed accurate as of the date below. Toyota can change specifications, features, colors and availability at any time without notice; confirm the equipment on any specific vehicle before purchase. This guide shows no pricing.</p>
     <p>EPA-estimated 21 city/28 highway/24 combined mpg rating for 2026 Grand Highlander LE FWD, XLE FWD and Limited FWD; 21 city/27 highway/23 combined for Hybrid LE AWD and XLE AWD; 20 city/26 highway/22 combined for Limited AWD and Platinum AWD; 37 city/34 highway/36 combined for Hybrid XLE FWD; 36 city/32 highway/34 combined for Hybrid LE AWD, Hybrid XLE AWD, Hybrid Limited AWD and Hybrid Nightshade Edition; 26 city/27 highway/27 combined for Hybrid MAX Limited AWD and Hybrid MAX Platinum AWD. Use for comparison purposes only. Your mileage will vary for many reasons, including your vehicle's condition and how/where you drive. See www.fueleconomy.gov.</p>
     <p>Never tow beyond a vehicle's published towing capacities. Do not overload your vehicle. See Owner's Manual for weight limits and restrictions. Toyota Safety Sense™ effectiveness is dependent on many factors including road, weather and vehicle conditions; drivers are responsible for their own safe driving. Do not rely exclusively on Blind Spot Monitor, Rear Cross-Traffic Alert, Safe Exit Alert or the Panoramic View Monitor. Traffic Jam Assist is not an automated driving system, requires driver supervision at all times, is designed to function on controlled access freeways at speeds of 25 mph or less, and requires an active Drive Connect trial or subscription. Digital Key requires an active Remote Connect subscription and Bluetooth® connectivity. Connected Services depend on 4G network availability, a cellular connection and GPS signal; subscription required after trial. Wireless charging may not be compatible with all mobile phones. 120V outlets rated for 1500 watts shared between both outlets. Apple CarPlay® is a registered trademark of Apple Inc.; Android Auto™ is a trademark of Google LLC; JBL® is a registered trademark of Harman International Industries, Inc.; Ultrasuede® is a registered trademark of Toray Industries, Inc.; HomeLink® is a registered trademark of Gentex Corporation.</p>
-    <p>Guide dated September 23, 2026.</p>
+    <p>Guide dated October 1, 2026.</p>
   </div>
 </section>
 </div>
@@ -533,7 +533,7 @@ function renderSpecs(){
   document.getElementById('specs-t').innerHTML=SPECS.map((r,i)=>i===0?'<tr>'+r.map(x=>{const [n,p]=x.split('|');return p?`<th class="sh" data-pts="${p}">${n}</th>`:`<th>${n}</th>`}).join('')+'</tr>':'<tr>'+r.map((x,j)=>j===0?`<td class="feat">${x}</td>`:`<td class="txt" ${x==='Same'?'style="color:var(--dim)"':''}>${x}</td>`).join('')+'</tr>').join('');
 }
 renderTrims();renderMatrix();renderColors();renderSpecs();
-// ---------- INVENTORY (export 9/23/26) ----------
+// ---------- INVENTORY (export 10/1/26) ----------
 const SHEET_LIVE = true;
 const EXT={"01J9":["Celestial Silver Metallic","#b8bcc2"],"0218":["Midnight Black Metallic","#0d0d0f"],"0089":["Wind Chill Pearl","#f1f2f0"],"03T3":["Ruby Flare Pearl","#8e1220"],"01L5":["Heavy Metal","#4a4d52"],"08X8":["Blueprint","#1f3c6e"],"01H5":["Cement","#9c9a94"],"01L6":["Storm Cloud","#6d7378"]};
 const INT={EA20:"Black SofTex®",EA10:"Light Gray SofTex®",LC20:"Black Leather",LC10:"Light Gray Leather",LD20:"Black Leather",LB10:"Light Gray Leather",LB20:"Black Leather",LB40:"Portobello Leather",LA20:"Black Leather and Ultrasuede®",LA10:"Light Gray Leather and Ultrasuede®",LA40:"Portobello Leather and Ultrasuede®"};
@@ -542,34 +542,29 @@ const CAT={G:"In stock",F:"In transit",FI:"In transit",A:"Scheduled for producti
 const TRIMPT={"Hybrid XLE":"hybrid","Hybrid Limited":"hybrid","Hybrid Nightshade":"hybrid","Hybrid MAX Platinum":"max","Hybrid MAX Limited":"max","XLE":"gas","Limited":"gas","Platinum":"gas"};
 // [cat, trim, model, ext, int, vin, codes, msrp, reserved]
 const INV=[
+["G","Platinum","6712S","0089","LB40","5TDAAAB51TS154976","FE PC 2T",57903,"Y"],
+["G","Platinum","6712S","03T3","LB20","5TDAAAB50TS156511","FE PC 2T",57903,"N"],
+["F","Platinum","6712S","0089","LB10","5TDAAAB52TS149480","FE PC 2T 3C D5 FL J6 MF PL",60606,"Y"],
+["A","XLE","6708S","0218","EA20","5TDAAAB53TS39E728","FE SR 2T",49963,"Y"],
+["A","XLE","6708S","0218","EA20","5TDAAAB52TS43G693","FE 2T",48613,"Y"],
 ["A","Limited","6710S","03T3","LC20","5TDAAAB53TS43F021","FE BS PC SB SR 2T",55768,"N"],
 ["A","Platinum","6712S","01L5","LB20","5TDAAAB59TS42F996","FE PC 2T",57903,"N"],
-["A","Platinum","6712S","0218","LB10","5TDAAAB58TS39F714","FE 2T G4 MF",57983,"N"],
-["A","Platinum","6712S","03T3","LB20","5TDAAAB52TS38H947","FE PC 2T",57903,"N"],
+["A","Platinum","6712S","01L5","LB40","5TDAAAB55TS39F248","FE PC 2T J6",58248,"Y"],
+["A","Platinum","6712S","0218","LB20","5TDAAAB5XTS40H071","FE 2T MF PL",57763,"Y"],
 ["A","Hybrid XLE","6716S","0089","EA10","5TDABAA55TS42F329","FE PC 2T",49238,"N"],
 ["A","Hybrid XLE","6716S","01J9","EA10","5TDABAA59TS42H276","FE 2T",48763,"N"],
 ["A","Hybrid XLE","6716S","01J9","EA10","5TDABAA59TS40G153","FE 2T",48763,"N"],
-["A","Hybrid Limited","6724S","01L6","LC10","5TDACAB54TS43G348","FE SB 2T",55693,"N"],
-["A","Hybrid Limited","6724S","03T3","LC20","5TDACAB51TS43F139","FE PC SB 2T",56168,"N"],
-["G","Limited","6710S","03T3","LC20","5TDAAAB50TS155391","FE PC SB 2T",54418,"Y"],
-["G","Hybrid XLE","6722S","0089","EA10","5TDACAB57TS128411","FE PC 2T",50838,"Y"],
-["F","XLE","6708S","0089","EA20","5TDAAAB57TS155890","FE BS PC 2T",49088,"Y"],
-["F","Platinum","6712S","0089","LB10","5TDAAAB52TS149480","FE PC 2T 3C D5 FL J6 MF PL",60606,"Y"],
-["A","XLE","6708S","0218","EA20","5TDAAAB53TS39E728","FE SR 2T",49963,"Y"],
-["A","XLE","6708S","0218","EA20","5TDAAAB53TS38H536","FE 2T",48613,"Y"],
-["A","Platinum","6712S","01L5","LB40","5TDAAAB55TS39F248","FE PC 2T J6",58248,"Y"],
 ["A","Hybrid Limited","6724S","0089","LC10","5TDACAB52TS41G325","FE BS PC SB 2T 3T 43 DH",57773,"Y"],
-["A","Hybrid Limited","6724S","01L5","LC20","5TDACAB52TS38G937","FE PC SB SR 2T",57518,"Y"],
-["A","Hybrid Limited","6724S","01L5","LC20","5TDACAB56TS38I156","FE PC SB SR 2T 3T 43 87 D5 DH",59393,"Y"],
+["A","Hybrid Limited","6724S","0089","LC20","5TDACAB57TS43F341","FE PC SB SR 2T",57518,"Y"],
+["A","Hybrid Limited","6724S","01L6","LC10","5TDACAB54TS43G348","FE SB SR 2T 43",57393,"Y"],
 ["A","Hybrid Limited","6724S","01L6","LC20","5TDACAB54TS42F642","FE SB 2T BM DH MF",57063,"Y"],
-["A","Hybrid Limited","6724S","0218","LC10","5TDACAB53TS38G560","FE SB 2T BM D5 MF",56298,"Y"],
 ["A","Hybrid Limited","6724S","0218","LC20","5TDACAB52TS39F038","FE SB SR 2T DH",57973,"Y"],
-["A","Hybrid Limited","6724S","08X8","LC20","5TDACAB54TS38H216","FE SB 3C 43 MF V1",56582,"Y"],
+["A","Hybrid Limited","6724S","03T3","LC10","5TDACAB52TS43F909","FE PC SB SR 2T",57518,"Y"],
 ["A","Hybrid MAX Platinum","6732S","0089","LA10","5TDADAB55TS42H882","FE PC 2T",62633,"Y"],
 ["A","Hybrid MAX Platinum","6732S","01L6","LA40","5TDADAB58TS43F961","FE 2T BM V1",62937,"Y"],
-["A","Hybrid MAX Platinum","6732S","0218","LA40","5TDADAB53TS40F802","FE 2T 3C D5 FL",64191,"Y"],
+["A","Hybrid MAX Platinum","6732S","0218","LA40","5TDADAB53TS40F802","FE 2T 3C D5 J6 MF PL",63271,"Y"],
 ["A","Hybrid MAX Platinum","6732S","03T3","LA20","5TDADAB55TS41G123","FE PC 3P 3T 87 BM D5 DH G4 J6 MF PL",65564,"Y"],
-["A","Hybrid MAX Platinum","6732S","08X8","LA20","5TDADAB5XTS41E805","FE 2T BM G4 J6 MF PL",63513,"Y"],
+["A","Hybrid MAX Platinum","6732S","08X8","LA20","5TDADAB5XTS41E805","FE 2T 87 D5 MF",62588,"Y"],
 ["A","Hybrid Nightshade","6733S","0089","LD20","5TDACAB56TS39G662","FE BK PC 2T MF",56708,"Y"],
 ["A","Hybrid Nightshade","6733S","01H5","LD20","5TDACAB57TS31I858","FE BK SB SR 2T BM MF",58463,"Y"],
 ["A","Hybrid Nightshade","6733S","0218","LD20","5TDACAB5XTS39H331","FE BK SB SR 2T 43 DH",59303,"Y"]
