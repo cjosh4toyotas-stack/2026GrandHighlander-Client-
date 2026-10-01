@@ -125,6 +125,43 @@ th.trimh[data-pts="hybrid gas"]{box-shadow:none;background:linear-gradient(90deg
 .inv-sub span{color:var(--muted);font-weight:normal;font-size:13px;margin-left:8px}
 @media(prefers-reduced-motion:reduce){.badge-av{animation:none}}
 @media print{.badge-av{animation:none;box-shadow:none}.unit.sold{opacity:.7}.reserve{display:none}body{background:#fff;color:#000}.card,.tablewrap{background:#fff;border-color:#bbb}.trim.dimmed{opacity:1}th{background:#eee;color:#000}td.S{color:#0a7a3a}td.O{color:#9a6b00}td.N{color:#999}.filter,nav.jump,.cta{display:none}header,footer{background:#fff;color:#000}header p,footer p{color:#333}.stat div,.note{background:#f3f3f3;color:#000}}
+
+/* comparison table */
+.k-hybrid{--pc:var(--hy);--grad:linear-gradient(180deg,#04101F 0%,#0A3B70 55%,#1E8FE0 100%);--glow:rgba(59,156,255,.45)}
+.k-max{--pc:var(--mx);--grad:linear-gradient(180deg,#1c0d00 0%,#7a3d00 55%,#ff8c1a 100%);--glow:rgba(255,140,26,.45)}
+.k-gas{--pc:var(--gs);--grad:linear-gradient(180deg,#121316 0%,#3d4148 55%,#8f969e 100%);--glow:rgba(176,182,189,.35)}
+.k-dual{--pc:#8fb8e0;--grad:linear-gradient(180deg,rgba(4,10,20,.92) 0%,rgba(4,10,20,.35) 55%,rgba(0,0,0,0) 100%),linear-gradient(90deg,#1E8FE0 0 50%,#8f969e 50% 100%);--glow:rgba(59,156,255,.3)}
+.cmp-bar{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;margin:0 0 10px}
+.ptsel,.cmp-pick{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.cmp-bar .t{color:var(--muted);font-size:13px;margin-right:2px}
+.psbtn{padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:#fff;cursor:pointer;font:bold 14px Arial,Helvetica,sans-serif}
+.psbtn[data-ps=hybrid]{border-color:var(--hy);color:var(--hy)}.psbtn[data-ps=gas]{border-color:var(--gs);color:var(--gs)}
+.psbtn.on{background:var(--red);border-color:var(--red);color:#fff}
+.psbtn.on[data-ps=hybrid]{background:var(--hy);border-color:var(--hy);color:#000}.psbtn.on[data-ps=gas]{background:var(--gs);border-color:var(--gs);color:#000}
+.cbtn{font:bold 13px Arial,Helvetica,sans-serif;padding:8px 14px;border-radius:8px;border:1.5px solid var(--pc);color:var(--pc);background:transparent;cursor:pointer;transition:box-shadow .15s,background .15s}
+.cbtn.on{background:var(--grad);color:#fff;box-shadow:0 0 10px var(--glow);text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.cbtn:disabled{opacity:.28;cursor:not-allowed;text-decoration:line-through}
+.psbtn:focus-visible,.cbtn:focus-visible,.cmp .x:focus-visible,#cmpreset:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.cmp-meta{display:flex;gap:14px;align-items:center;font-size:13px;color:var(--muted);margin:2px 0 4px;min-height:28px}
+#cmpreset{background:none;border:1px solid var(--line);color:#fff;border-radius:999px;padding:4px 12px;font:13px Arial,Helvetica,sans-serif;cursor:pointer}
+#cmpreset:hover{border-color:#fff}
+.tbl-scroll{overflow:auto;max-height:78vh;border:1px solid var(--line);border-radius:12px;background:var(--panel);overscroll-behavior:contain}
+table.cmp{width:100%}
+.cmp th{position:sticky;top:0;z-index:3}
+.cmp th.fh{left:0;z-index:5;background:#101014;vertical-align:bottom;min-width:240px}
+.cmp th.trimbox{background:var(--grad);color:#fff;text-align:center;vertical-align:bottom;padding:14px 30px 10px;border-left:2px solid var(--bg);border-bottom:3px solid var(--pc);min-width:150px;text-shadow:0 1px 2px rgba(0,0,0,.7)}
+.cmp th.trimbox .nm{display:block;font-size:15px;line-height:1.2}
+.cmp th.trimbox .ps{display:block;font-size:11px;font-weight:normal;margin-top:4px;color:rgba(255,255,255,.88)}
+.cmp .x{position:absolute;top:6px;right:6px;width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.5);color:#fff;cursor:pointer;font-size:15px;line-height:20px;padding:0}
+.cmp .x:hover{background:var(--red);border-color:var(--red)}
+.cmp td.feat{position:sticky;left:0;z-index:2;background:var(--panel);min-width:240px}
+.cmp tbody tr:nth-child(even) td{background:#17171c}
+.cmp tbody tr:nth-child(even) td.feat{background:#17171c}
+.cmp tbody tr:hover td,.cmp tbody tr:hover td.feat{background:#202028}
+.cmp tbody tr.grp td,.cmp tbody tr.grp:hover td{background:#101014 !important;color:var(--red);font-weight:bold;letter-spacing:1px;font-size:12px;text-transform:uppercase}
+.cmp td.empty{color:var(--muted);text-transform:none;letter-spacing:0}
+@media(max-width:600px){.cmp th.fh,.cmp td.feat{min-width:150px;max-width:170px;font-size:12px}.cmp th.trimbox{min-width:130px;padding:14px 26px 10px}}
+@media print{.cmp-bar,.cmp-meta,.cmp .x{display:none !important}.tbl-scroll{max-height:none;overflow:visible}.cmp th.trimbox{-webkit-print-color-adjust:exact;print-color-adjust:exact}.cmp td.feat{position:static}}
 </style>
 </head>
 <body>
@@ -232,10 +269,20 @@ th.trimh[data-pts="hybrid gas"]{box-shadow:none;background:linear-gradient(90deg
 <!-- MATRIX -->
 <section id="matrix">
   <h2>Feature comparison — exact status on every trim</h2>
-  <p class="lead">Only features that differ between trims are listed. Tap a column header to hide or show that trim. Standard equipment shared by every trim from XLE up is listed below the table.</p>
-  <div class="legend"><span><b style="color:var(--green)">S</b> Standard</span><span><b style="color:var(--gold)">O</b> Optional (factory option)</span><span><b style="color:var(--dim)">—</b> Not offered on this trim</span></div>
+  <p class="lead">Only features that differ between trims are listed. Choose Gas or Hybrid, then tap trims on or off to narrow the table to the ones you're deciding between. Standard equipment shared by every trim from XLE up is listed below the table.</p>
+  <div class="cmp-bar">
+    <div class="ptsel" role="group" aria-label="Powertrain">
+      <span class="t">Powertrain</span>
+      <button class="psbtn on" data-ps="all" aria-pressed="true">All</button>
+      <button class="psbtn" data-ps="hybrid" aria-pressed="false">Hybrid</button>
+      <button class="psbtn" data-ps="gas" aria-pressed="false">Gas</button>
+    </div>
+    <div class="cmp-pick" id="cmppick" role="group" aria-label="Trims to compare"></div>
+  </div>
+  <div class="cmp-meta"><span id="cmpcount"></span><button type="button" id="cmpreset">Show all trims</button></div>
+  <div class="legend"><span><b style="color:var(--green)">S</b> Standard</span><span><b style="color:var(--gold)">O</b> Optional (factory option)</span><span><b style="color:var(--dim)">—</b> Not offered on this trim</span><span><span class="dot" style="background:var(--hy)"></span>2.5L Hybrid</span><span><span class="dot" style="background:var(--mx)"></span>Hybrid MAX</span><span><span class="dot" style="background:var(--gs)"></span>2.4L Turbo gas</span></div>
   <div style="height:12px"></div>
-  <div class="tablewrap"><table id="mtx"></table></div>
+  <div class="tbl-scroll"><table id="mtx" class="cmp"></table></div>
   <div class="card" style="margin-top:18px">
     <h3 style="font-size:16px">Standard on every trim from XLE up</h3>
     <ul class="clean" style="columns:2;column-gap:30px">
@@ -508,31 +555,108 @@ document.getElementById('ptfilter').addEventListener('click',e=>{
   });
 });
 
-const hidden=new Set();
+// ---------- COMPARISON TABLE ----------
+// Columns that come with either powertrain show the selected powertrain's equipment.
+const PT_CELL={
+ "Predictive Fuel-Efficient Drive":{xle:{hybrid:"S",gas:"N"},limited:{hybrid:"S",gas:"N"}},
+ "120V AC power outlets":{limited:{hybrid:"S|Two outlets (1500W shared)",gas:"S|One outlet"}}
+};
+const COL_PT={
+ xle:{hybrid:{name:"Hybrid XLE",ps:"2.5L Hybrid · FWD or AWD"},gas:{name:"XLE",ps:"2.4L Turbo · FWD or AWD"},all:{name:"XLE",ps:"Gas or Hybrid"}},
+ limited:{hybrid:{name:"Hybrid Limited",ps:"2.5L Hybrid · AWD"},gas:{name:"Limited",ps:"2.4L Turbo · FWD or AWD"},all:{name:"Limited",ps:"Gas or Hybrid"}},
+ night:{all:{name:"Hybrid Nightshade",ps:"2.5L Hybrid · AWD"}},
+ maxlimited:{all:{name:"Hybrid MAX Limited",ps:"Hybrid MAX · AWD"}},
+ platinum:{all:{name:"Platinum",ps:"2.4L Turbo · AWD"}},
+ maxplat:{all:{name:"Hybrid MAX Platinum",ps:"Hybrid MAX · AWD"}}
+};
+const cmpOn=new Set(COLS.map(c=>c.id));
+let cmpPS="all";
+function colPts(c){return c.pts.split(" ");}
+function offered(c){
+  if(cmpPS==="all")return true;
+  const p=colPts(c);
+  return cmpPS==="gas"?p.includes("gas"):(p.includes("hybrid")||p.includes("max"));
+}
+function colKind(c){
+  const p=colPts(c);
+  if(p.length>1){return cmpPS==="gas"?"gas":cmpPS==="hybrid"?"hybrid":"dual";}
+  return p[0];
+}
+function colLabel(c){const m=COL_PT[c.id];return m[cmpPS]||m.all;}
+function rowPT(label){
+  if(label.indexOf("2.5L Hybrid (")>-1)return "hybrid";
+  if(label.indexOf("Hybrid MAX (")>-1)return "max";
+  if(label.indexOf("2.4L Turbo gas")>-1)return "gas";
+  return null;
+}
+function rowShown(label){
+  const k=rowPT(label); if(!k||cmpPS==="all")return true;
+  return cmpPS==="gas"?k==="gas":k!=="gas";
+}
+function cellVal(label,c,raw){
+  const o=PT_CELL[label]&&PT_CELL[label][c.id];
+  return (o&&cmpPS!=="all"&&o[cmpPS])?o[cmpPS]:raw;
+}
+function renderPicker(){
+  const el=document.getElementById('cmppick');
+  el.innerHTML='<span class="t">Compare</span>'+COLS.map(c=>{
+    const ok=offered(c), on=ok&&cmpOn.has(c.id);
+    return `<button type="button" class="cbtn k-${colKind(c)} ${on?'on':''}" data-id="${c.id}" aria-pressed="${on}" ${ok?'':'disabled title="Not offered with this powertrain"'}>${colLabel(c).name}</button>`;
+  }).join('');
+}
 function renderMatrix(){
   const t=document.getElementById('mtx');
-  let h='<tr><th>Feature</th>'+COLS.map(c=>`<th class="trimh ${hidden.has(c.id)?'off':''}" data-id="${c.id}" data-pts="${c.pts}">${c.name}<small>${c.pts.split(" ").map(k=>`<span class="dot" style="background:var(--${k==="hybrid"?"hy":k==="max"?"mx":"gs"})"></span>`).join("")}${c.sub}</small></th>`).join('')+'</tr>';
+  const cols=COLS.filter(c=>offered(c)&&cmpOn.has(c.id));
+  const avail=COLS.filter(offered).length;
+  document.getElementById('cmpcount').textContent=`Comparing ${cols.length} of ${avail} trim${avail===1?'':'s'}`;
+  document.getElementById('cmpreset').hidden=cols.length===avail;
+  t.style.minWidth=cols.length?`${240+cols.length*150}px`:'0';
+  let h='<thead><tr><th class="fh">Feature</th>'+cols.map(c=>{
+    const l=colLabel(c);
+    return `<th class="trimbox k-${colKind(c)}" scope="col"><span class="nm">${l.name}</span><span class="ps">${l.ps}</span><button type="button" class="x" data-id="${c.id}" aria-label="Remove ${l.name} from the comparison">×</button></th>`;
+  }).join('')+'</tr></thead><tbody>';
+  if(!cols.length){
+    h+='<tr><td class="feat empty">Every trim is hidden. Tap a trim above to add it back.</td></tr></tbody>';
+    t.innerHTML=h; return;
+  }
+  let grp=null;
   MATRIX.forEach(r=>{
-    if(r.length===1){h+=`<tr class="grp"><td colspan="${COLS.length+1}">${r[0]}</td></tr>`;return;}
+    if(r.length===1){grp=r[0];return;}
+    if(!rowShown(r[0]))return;
+    if(grp){h+=`<tr class="grp"><td class="feat">${grp}</td><td colspan="${cols.length}"></td></tr>`;grp=null;}
     h+=`<tr><td class="feat">${r[0]}</td>`;
-    COLS.forEach((c,i)=>{
-      if(hidden.has(c.id)){h+='<td></td>';return;}
-      const raw=r[i+1]; const [v,note]=raw.split('|');
+    cols.forEach(c=>{
+      const raw=cellVal(r[0],c,r[COLS.indexOf(c)+1]); const [v,note]=raw.split('|');
       if(v==='S'||v==='O'||v==='N'){h+=`<td class="c ${v}">${v==='N'?'—':v}${note?`<small style="display:block;font-weight:normal;color:var(--muted)">${note}</small>`:''}</td>`;}
       else h+=`<td class="txt">${raw}</td>`;
     });
     h+='</tr>';
   });
-  t.innerHTML=h;
-  t.querySelectorAll('th.trimh').forEach(th=>th.addEventListener('click',()=>{const id=th.dataset.id; hidden.has(id)?hidden.delete(id):hidden.add(id); renderMatrix();}));
+  t.innerHTML=h+'</tbody>';
 }
+function refreshCompare(){renderPicker();renderMatrix();}
+document.querySelector('.ptsel').addEventListener('click',e=>{
+  const b=e.target.closest('.psbtn'); if(!b)return;
+  cmpPS=b.dataset.ps;
+  document.querySelectorAll('.ptsel .psbtn').forEach(x=>{const on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on);});
+  refreshCompare();
+});
+document.getElementById('cmppick').addEventListener('click',e=>{
+  const b=e.target.closest('.cbtn'); if(!b||b.disabled)return;
+  const id=b.dataset.id; cmpOn.has(id)?cmpOn.delete(id):cmpOn.add(id); refreshCompare();
+});
+document.getElementById('mtx').addEventListener('click',e=>{
+  const b=e.target.closest('.x'); if(!b)return;
+  cmpOn.delete(b.dataset.id); refreshCompare();
+});
+document.getElementById('cmpreset').addEventListener('click',()=>{COLS.forEach(c=>cmpOn.add(c.id));refreshCompare();});
 function renderColors(){
   document.getElementById('colorcards').innerHTML=COLORS.map(c=>`<div class="card"><h3 style="font-size:17px">${c.name}</h3><div style="margin:8px 0">${c.ext.map(e=>`<span class="sw"><i style="background:${SWATCH[e]}"></i>${e}</span>`).join('')}</div><div class="sub" style="margin:0">Interior: ${c.int}</div></div>`).join('');
 }
 function renderSpecs(){
   document.getElementById('specs-t').innerHTML=SPECS.map((r,i)=>i===0?'<tr>'+r.map(x=>{const [n,p]=x.split('|');return p?`<th class="sh" data-pts="${p}">${n}</th>`:`<th>${n}</th>`}).join('')+'</tr>':'<tr>'+r.map((x,j)=>j===0?`<td class="feat">${x}</td>`:`<td class="txt" ${x==='Same'?'style="color:var(--dim)"':''}>${x}</td>`).join('')+'</tr>').join('');
 }
-renderTrims();renderMatrix();renderColors();renderSpecs();
+renderTrims();refreshCompare();renderColors();renderSpecs();
 // ---------- INVENTORY (export 10/1/26) ----------
 const SHEET_LIVE = true;
 const EXT={"01J9":["Celestial Silver Metallic","#b8bcc2"],"0218":["Midnight Black Metallic","#0d0d0f"],"0089":["Wind Chill Pearl","#f1f2f0"],"03T3":["Ruby Flare Pearl","#8e1220"],"01L5":["Heavy Metal","#4a4d52"],"08X8":["Blueprint","#1f3c6e"],"01H5":["Cement","#9c9a94"],"01L6":["Storm Cloud","#6d7378"]};
