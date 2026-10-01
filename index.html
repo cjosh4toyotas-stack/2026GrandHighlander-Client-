@@ -162,13 +162,16 @@ table.cmp{width:100%}
 .cmp td.empty{color:var(--muted);text-transform:none;letter-spacing:0}
 @media(max-width:600px){.cmp th.fh,.cmp td.feat{min-width:150px;max-width:170px;font-size:12px}.cmp th.trimbox{min-width:130px;padding:14px 26px 10px}}
 @media print{.cmp-bar,.cmp-meta,.cmp .x{display:none !important}.tbl-scroll{max-height:none;overflow:visible}.cmp th.trimbox{-webkit-print-color-adjust:exact;print-color-adjust:exact}.cmp td.feat{position:static}}
+#trimcards[data-ps=hybrid] .trim[data-pts="hybrid gas"]:before{background:var(--hy)}
+#trimcards[data-ps=gas] .trim[data-pts="hybrid gas"]:before{background:var(--gs)}
+#trimcards[data-ps=hybrid] .chip[data-pt=gas],#trimcards[data-ps=gas] .chip[data-pt=hybrid]{display:none}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
     <div>
-      <div class="tag">2026 Model Year · McGrath Toyota of Iowa City</div>
+      <div class="tag">2026 Model Year</div>
       <h1>2026 Grand Highlander <span>Trim & Powertrain Guide</span></h1>
       <p>Every trim, every powertrain, and exactly what changes between them — built from Toyota's 2026 Grand Highlander Sourcebook so nothing gets assumed.</p>
     </div>
@@ -547,6 +550,7 @@ document.getElementById('ptfilter').addEventListener('click',e=>{
   const b=e.target.closest('.fbtn'); if(!b)return;
   document.querySelectorAll('#ptfilter .fbtn').forEach(x=>x.classList.remove('on')); b.classList.add('on');
   const pt=b.dataset.pt;
+  document.getElementById('trimcards').dataset.ps=pt;
   document.querySelectorAll('.trim').forEach(card=>{
     card.classList.toggle('dimmed', pt!=='all' && !card.dataset.pts.split(' ').includes(pt));
     if(pt!=='all' && card.dataset.pts.split(' ').includes(pt)){
