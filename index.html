@@ -80,7 +80,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
 footer b{font-size:18px}
 footer p{margin:2px 0;color:var(--muted)}
 .cta{display:inline-block;background:var(--red);color:#fff;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:bold}
-.pt-hybrid{--pc:var(--hy)}.pt-max{--pc:var(--mx)}.pt-gas{--pc:var(--gs)}
+.pt-hybrid{--pc:var(--hy);--ptg:rgba(59,156,255,.16)}.pt-max{--pc:var(--mx);--ptg:rgba(255,140,26,.16)}.pt-gas{--pc:var(--gs);--ptg:rgba(176,182,189,.13)}
 .card.ptcard{border-top:4px solid var(--pc);background:linear-gradient(180deg,var(--ptg) 0%,var(--panel) 70%)}
 .card.ptcard.pt-hybrid{--ptg:rgba(59,156,255,.16)}.card.ptcard.pt-max{--ptg:rgba(255,140,26,.16)}.card.ptcard.pt-gas{--ptg:rgba(176,182,189,.13)}
 .card.ptcard .stat div{background:rgba(255,255,255,.04)}
@@ -105,10 +105,10 @@ th.trimh[data-pts="hybrid gas"]{box-shadow:none;background:linear-gradient(90deg
 .inv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 @media(max-width:900px){.inv-grid{grid-template-columns:1fr}}
 .unit{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;position:relative;overflow:hidden}
-.unit.avail{border-color:rgba(46,204,113,.55);background:linear-gradient(90deg,rgba(46,204,113,.10),var(--panel) 45%)}
-.unit.sold{border-color:rgba(235,10,30,.45);background:linear-gradient(90deg,rgba(235,10,30,.10),var(--panel) 45%)}
+.unit.avail,.unit.sold{border-color:color-mix(in srgb,var(--pc) 45%,transparent);background:linear-gradient(160deg,var(--ptg) 0%,var(--panel) 65%)}
 .unit:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--line)}
-.unit.avail:before{background:var(--green)}.unit.sold:before{background:var(--red)}
+.unit.avail:before,.unit.sold:before{background:var(--pc)}
+.unit .ptchip{background:color-mix(in srgb,var(--pc) 14%,transparent)}
 .unit .ptchip{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--pc);color:var(--pc);margin-bottom:6px}
 .unit h3{margin:0 0 2px;font-size:17px;padding-right:110px}
 .unit .price{font-size:22px;font-weight:bold;margin:6px 0 2px}
@@ -726,7 +726,7 @@ function unitCard(u,avail){
   const name=`2026 Grand Highlander ${trim} ${drive(model)}`;
   const temp=isTempVin(vin);
   const sms=`sms:+13196311461?&body=${encodeURIComponent(`Hi Josh, I'd like to reserve the ${name} in ${e[0]}, MSRP $${msrp.toLocaleString()}, VIN ${vin}.`)}`;
-  return `<div class="unit ${avail?'avail':'sold'}" style="--pc:var(--${pt==='hybrid'?'hy':pt==='max'?'mx':'gs'})">
+  return `<div class="unit ${avail?'avail':'sold'} pt-${pt}">
     <span class="${avail?'badge-av':'badge-sold'}">${avail?'AVAILABLE':'SOLD'}</span>
     <span class="ptchip">${PT[pt].name}</span>
     <h3>${name}</h3>
